@@ -1,3 +1,5 @@
+# Simple Example
+
 require 'minitest/autorun'
 
 class Coffee

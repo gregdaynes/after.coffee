@@ -43,14 +43,18 @@ strong {
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
  */
 code {
   font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-  padding: .2em .4em;
+}
+
+article > * > code {
+  font-size: 0.8em;
+  font-style: italic;
+  background-color: ghostwhite;
+  padding: .1em .2em;
   margin: 0 .2em;
-  border-radius: 3px;
+  border-radius: 2px;
   box-shadow: inset 0 0 1px hsla(0,0%,0%,0.5);
 }
 
@@ -102,25 +106,37 @@ main {
   max-width: 65ch;
 }
 
-figure.highlight {
-  background-color: black;
-  padding: 0.4em 1em;
-  color: white;
-  overflow-x: auto;
-  margin: 0 -1em;
+.code-snippet {
+  margin-bottom: 1em;
 
-  /**
-   * 1. Correct the inheritance and scaling of font size in all browsers.
-   * 2. Correct the odd `em` font sizing in all browsers.
-   */
-  pre {
-    font-family: monospace, monospace; /* 1 */
-    font-size: 1em; /* 2 */
+  figure.highlight {
+    background-color: black;
+    padding: 0.4em 1em;
+    color: white;
+    overflow-x: auto;
+    margin: 0 -1em;
+
+    /**
+     * 1. Correct the inheritance and scaling of font size in all browsers.
+     * 2. Correct the odd `em` font sizing in all browsers.
+     */
+    pre {
+      font-family: monospace, monospace; /* 1 */
+      font-size: 1em; /* 2 */
+    }
+
+    code {
+      font-size: 1em;
+      padding: 0;
+      margin: 0;
+    }
   }
 
-  code {
-    font-size: 1em;
-    padding: 0;
+  &__filename {
+    background-color: black;
+    margin: 0 -1em;
+    padding: 1em 1em 0;
+    color: gray;
   }
 }
 
