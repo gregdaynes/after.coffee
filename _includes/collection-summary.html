@@ -1,0 +1,6 @@
+{% for post in include.collection %}
+  <details {% if post.hook %}open{% endif %}>
+    <summary><a href="{{ post.url }}">{{ post.title }}</a></summary>
+    <p>{{ post.hook }}</p>
+  </details>
+{% endfor %}

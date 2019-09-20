@@ -1,5 +1,32 @@
 title: After Coffee
+owner: Gregory Daynes
 email: contact@after.coffee
 description: >-
+  Articles on software & web development, best paired with a hot cup of coffee.
 baseurl: ""
 url: "https://after.coffee"
+language: "en-GB"
+kramdown:
+  parse_block_html: true
+collections:
+  readings:
+    output: true
+    permalink: /:collection/:name/index.html
+  articles:
+    output: true
+    permalink: /:collection/:name/index.html
+
+defaults:
+  - scope:
+      path: ""
+      type: "readings"
+    values:
+      layout: "reading"
+      author: Gregory Daynes
+  - scope:
+      path: ""
+      type: "articles"
+    values:
+      layout: "article"
+      author: Gregory Daynes
+

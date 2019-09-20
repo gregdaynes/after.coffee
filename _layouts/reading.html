@@ -1,0 +1,27 @@
+---
+layout: base
+---
+<article>
+  <header>
+    <h1>{{ page.title }}</h1>
+    <p>
+      {{ page.author }} |
+      {{ page.date | date: "%Y-%m-%d" }}<br />
+      Tags: {{ page.tags | join: ", " }}
+    </p>
+  </header>
+
+  <aside>
+    <strong>Article in review</strong>
+    <p>
+      <a href="{{ page.article.link }}">{{ page.article.title }}</a> - <small>(<a href="{{page.article.archive}}">Cached</a>)</small><br />
+      by {{ page.article.author }} - <a href="https://twitter.com/{{page.article.twitter}}">@{{page.article.twitter}}</a>
+    </p>
+  </aside>
+
+  <section>
+    <p><em>{{ page.hook }}</em></p>
+  </section>
+
+  {{ content }}
+</article>
