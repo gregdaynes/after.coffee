@@ -48,6 +48,10 @@ strong {
 code {
   font-family: monospace, monospace; /* 1 */
   font-size: 1em; /* 2 */
+  padding: .2em .4em;
+  margin: 0 .2em;
+  border-radius: 3px;
+  box-shadow: inset 0 0 1px hsla(0,0%,0%,0.5);
 }
 
 /**
@@ -113,6 +117,11 @@ figure.highlight {
     font-family: monospace, monospace; /* 1 */
     font-size: 1em; /* 2 */
   }
+
+  code {
+    font-size: 1em;
+    padding: 0;
+  }
 }
 
 .readings-source {
@@ -132,4 +141,23 @@ figure.highlight {
   flex-grow: 1;
   justify-content: center;
   text-align: center;
+}
+
+details {
+  summary {
+    list-style-position: outside;
+  }
+}
+
+article {
+  h1, h2, h3 {
+    padding-top: 100px;
+    margin-top: -80px;
+  }
+}
+
+.table-of-contents {
+  ul ul {
+    display: none;
+  }
 }

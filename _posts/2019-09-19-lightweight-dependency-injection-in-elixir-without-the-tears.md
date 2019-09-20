@@ -16,8 +16,10 @@ tags:
   - code design
 ---
 
-In _{{ page.article.title }}_, Andrew Hao goes in depth into how to perform 4 variations of dependency injection using Elixir.
+In _{{ page.article.title }}_, Andrew Hao goes in depth into how to perform four variations of dependency injection using Elixir.
 
 After reviewing and thinking about the methods discussed, I find I am partial to _Approach 4: Protocols and data_.
 
-Approach 4 uses [protocols and structs](https://elixir-lang.org/getting-started/protocols.html) to achieve a type-like way of defining functions. It is a little cumbersome due to having to define the type as a Struct, which is passed as the first parameter of the function being called. Once you wrap your head around it, it is a reasonable approach.
+Approach 4 uses protocols and structs[^1]  to achieve a type-like way of defining functions. It is a little cumbersome due to having to define the type as a Struct, which is passed as the first parameter of the function being called. Once you wrap your head around it, it is a reasonable approach.
+
+[^1]: [protocols and structs](https://elixir-lang.org/getting-started/protocols.html)
