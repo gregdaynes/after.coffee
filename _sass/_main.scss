@@ -58,6 +58,7 @@ aside {
   background-color: seashell;
   border: 1px solid AntiqueWhite;
   padding: 1em;
+  margin: 0 -1em;
 
   > :last-child {
     margin-bottom: 0;
@@ -70,4 +71,11 @@ aside {
   flex-grow: 1;
   justify-content: center;
   text-align: center;
+}
+
+.report-an-issue {
+  background-color: snow;
+  border: 1px solid whitesmoke;
+  padding: 1em;
+  margin: 0 -1em;
 }

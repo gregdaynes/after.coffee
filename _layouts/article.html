@@ -9,6 +9,7 @@ layout: base
       {{ page.date | date: "%Y-%m-%d" }}<br />
       Tags: {{ page.tags | join: ", " }}
     </p>
+
   </header>
 
   <section>
@@ -16,4 +17,10 @@ layout: base
   </section>
 
   {{ content }}
+
+  <footer>
+    <div class="report-an-issue">
+      <a href="https://github.com/gregdaynes/after.coffee/issues/new?permalink=https://github.com/gregdaynes/after.coffee/blob/3b91d4da91ae447c4c58ca8ab3428647869d42c0/_articles/{{ page.path }}">Report an issue</a>
+    </div>
+  </footer>
 </article>
