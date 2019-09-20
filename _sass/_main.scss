@@ -1,7 +1,14 @@
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
 html {
+  line-height: 1.5625; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
   overflow-y: scroll;
   box-sizing: border-box;
   font-family: sans-serif;
+
 
   *:before, *:after {
     box-sizing: inherit;
@@ -9,19 +16,66 @@ html {
 }
 
 body {
-  max-width: 65ch;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.5625;
+  padding: 0 1em;
+  margin: 0;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+
+  /*
+   * Add the correct display in all browsers.
+   */
+  summary {
+    display: list-item;
+  }
 }
 
 .site-header {
   position: sticky;
   top: 0;
   background-color: white;
-  padding: 0.5em 0;
   margin: 0 -1em;
-  padding-left: 1em;
-  padding-right: 1em;
-  text-align: center;
 
   a {
     color: black;
@@ -29,33 +83,39 @@ body {
   }
 }
 
+.site-header,
 .site-colophon,
 .site-footer {
   text-align: center;
 }
 
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  line-height: 1.5625;
-}
-
 main {
   flex: 1;
   display: flex;
-  padding: 0 1em;
   flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 65ch;
 }
 
 figure.highlight {
   background-color: black;
   padding: 0.4em 1em;
-  margin: 0 -1em;
   color: white;
+  overflow-x: auto;
+  margin: 0 -1em;
+
+  /**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+  pre {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
 }
 
-aside {
+.readings-source {
   background-color: seashell;
   border: 1px solid AntiqueWhite;
   padding: 1em;
@@ -72,11 +132,4 @@ aside {
   flex-grow: 1;
   justify-content: center;
   text-align: center;
-}
-
-.report-an-issue {
-  background-color: snow;
-  border: 1px solid whitesmoke;
-  padding: 1em;
-  margin: 0 -1em;
 }

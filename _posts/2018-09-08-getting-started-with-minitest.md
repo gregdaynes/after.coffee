@@ -1,5 +1,7 @@
 ---
-hook: Minitest is a comprehensive testing library that ships with Ruby. Take a deep look into what Minitest is, how to use it, some of it's features and how it compares to RSpec.
+summary: Minitest is a comprehensive testing library that ships with Ruby. Take a deep look into what Minitest is, how to use it, some of it's features and how it compares to RSpec.
+categories: articles
+size: meal
 tags:
   - ruby
   - testing

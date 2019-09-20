@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: default
 ---
 <article>
   <header>
@@ -11,13 +11,15 @@ layout: base
     </p>
   </header>
 
-  <aside>
-    <strong>Article in review</strong>
+  {% if page.article.link %}
+  <div class="readings-source">
+    <strong>What I'm referring to</strong>
     <p>
       <a href="{{ page.article.link }}">{{ page.article.title }}</a> - <small>(<a href="{{page.article.archive}}">Cached</a>)</small><br />
       by {{ page.article.author }} - <a href="https://twitter.com/{{page.article.twitter}}">@{{page.article.twitter}}</a>
     </p>
-  </aside>
+  </div>
+  {% endif %}
 
   <section>
     <p><em>{{ page.hook }}</em></p>

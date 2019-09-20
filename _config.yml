@@ -8,25 +8,12 @@ url: "https://after.coffee"
 language: "en-GB"
 kramdown:
   parse_block_html: true
-collections:
-  readings:
-    output: true
-    permalink: /:collection/:name/index.html
-  articles:
-    output: true
-    permalink: /:collection/:name/index.html
 
 defaults:
   - scope:
       path: ""
-      type: "readings"
+      type: "posts"
     values:
-      layout: "reading"
-      author: Gregory Daynes
-  - scope:
-      path: ""
-      type: "articles"
-    values:
-      layout: "article"
+      layout: "post"
       author: Gregory Daynes
 
