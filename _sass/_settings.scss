@@ -1,0 +1,36 @@
+:root {
+  --c-base: white;
+  --c-subtle: ghostwhite;
+
+  --c-standout: black;
+  --c-muted: dimgrey;
+  --c-medium: silver;
+
+  --c-info: seashell;
+  --c-info-dark: antiquewhite;
+
+  --c-link: blue;
+  --c-link-visited: purple;
+  --c-link-active: red;
+}
+
+
+/* Light mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-base: black;
+    --c-subtle: dimgrey;
+
+    --c-standout: white;
+    --c-muted: silver;
+    --c-medium: silver;
+
+    --c-info: navy;
+    --c-info-dark: midnightblue;
+
+    --c-link: dodgerblue;
+    --c-link-visited: blueviolet;
+    --c-link-active: red;
+  }
+}
+

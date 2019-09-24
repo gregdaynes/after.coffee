@@ -1,13 +1,13 @@
 // Code snippet highlighting
 .highlight {
   @extend %callout;
-  background-color: black;
-  color: white;
+  background-color: var(--c-standout);
+  color: var(--c-base);
   overflow-x: auto;
 
   // First comment in the code block - usually a filename
   .c1 {
-    color: dimgrey;
+    color: var(--c-muted);
   }
 }
 
@@ -32,5 +32,5 @@ article {
 }
 
 .footnotes {
-  border-top: 1px solid silver;
+  border-top: 1px solid var(--c-medium);
 }

@@ -8,11 +8,11 @@
 }
 
 .background-yellow {
-  background-color: seashell;
+  background-color: var(--c-info);
 }
 
 .border-yellow {
-  border-color: AntiqueWhite;
+  border-color: var(--c-info-dark);
 }
 
 .border-solid {
