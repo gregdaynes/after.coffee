@@ -1,0 +1,41 @@
+.root {
+  font-size: 16px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.background-yellow {
+  background-color: seashell;
+}
+
+.border-yellow {
+  border-color: AntiqueWhite;
+}
+
+.border-solid {
+  border-size: 1px;
+  border-style: solid;
+}
+
+.space-md {
+
+}
+
+.pad-md {
+  padding: 1em;
+}
+
+.pad-short {
+  padding: 0.4em 1em;
+}
+
+.callout {
+  margin: 0 -1em;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}

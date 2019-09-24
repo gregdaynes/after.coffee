@@ -11,8 +11,8 @@
     {% seo %}
   </head>
 
-  <body class="{{ page.layout }}">
-    <main>
+  <body class="flex-column {{ page.layout }}">
+    <main class="flex-column" id="top">
       {% include site-header.html %}
 
       {{ content }}

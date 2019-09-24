@@ -1,179 +1,66 @@
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
-html {
-  line-height: 1.5625; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-  overflow-y: scroll;
-  box-sizing: border-box;
-  font-family: sans-serif;
+@import "generic-reset";
+@import "generic";
+@import "elements";
+@import "objects";
+@import "components";
 
+// .site-header {
+//   position: sticky;
+//   top: 0;
+//   background-color: white;
+//   margin: 0 -1em;
 
-  *:before, *:after {
-    box-sizing: inherit;
-  }
-}
+//   a {
+//     color: black;
+//     text-decoration: none;
+//   }
+// }
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  line-height: 1.5625;
-  padding: 0 1em;
-  margin: 0;
-}
+// .site-header,
+// .site-colophon,
+// .site-footer {
+//   text-align: center;
+// }
 
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
+// .code-snippet {
+//   margin-bottom: 1em;
 
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-b,
-strong {
-  font-weight: bolder;
-}
+//   figure.highlight {
+//     background-color: black;
+//     color: white;
+//     overflow-x: auto;
+//     margin: 0 -1em;
 
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- */
-code {
-  font-family: monospace, monospace; /* 1 */
-}
+//     code {
+//       font-size: 1em;
+//       padding: 0;
+//       margin: 0;
+//     }
+//   }
 
-article > * > code {
-  font-size: 0.8em;
-  font-style: italic;
-  background-color: ghostwhite;
-  padding: .1em .2em;
-  margin: 0 .2em;
-  border-radius: 2px;
-  box-shadow: inset 0 0 1px hsla(0,0%,0%,0.5);
-}
+//   &__filename {
+//     background-color: black;
+//     margin: 0 -1em;
+//     padding: 1em 1em 0;
+//     color: gray;
+//   }
+// }
 
-/**
- * Add the correct font size in all browsers.
- */
-small {
-  font-size: 80%;
-}
+// .site-page-not-found {
+//   flex-grow: 1;
+//   justify-content: center;
+//   text-align: center;
+// }
 
-/*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
-details {
-  display: block;
+// article {
+//   h1, h2, h3 {
+//     padding-top: 100px;
+//     margin-top: -80px;
+//   }
+// }
 
-  /*
-   * Add the correct display in all browsers.
-   */
-  summary {
-    display: list-item;
-  }
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  background-color: white;
-  margin: 0 -1em;
-
-  a {
-    color: black;
-    text-decoration: none;
-  }
-}
-
-.site-header,
-.site-colophon,
-.site-footer {
-  text-align: center;
-}
-
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin: 0 auto;
-  max-width: 65ch;
-}
-
-.code-snippet {
-  margin-bottom: 1em;
-
-  figure.highlight {
-    background-color: black;
-    padding: 0.4em 1em;
-    color: white;
-    overflow-x: auto;
-    margin: 0 -1em;
-
-    /**
-     * 1. Correct the inheritance and scaling of font size in all browsers.
-     * 2. Correct the odd `em` font sizing in all browsers.
-     */
-    pre {
-      font-family: monospace, monospace; /* 1 */
-      font-size: 1em; /* 2 */
-    }
-
-    code {
-      font-size: 1em;
-      padding: 0;
-      margin: 0;
-    }
-  }
-
-  &__filename {
-    background-color: black;
-    margin: 0 -1em;
-    padding: 1em 1em 0;
-    color: gray;
-  }
-}
-
-.readings-source {
-  background-color: seashell;
-  border: 1px solid AntiqueWhite;
-  padding: 1em;
-  margin: 0 -1em;
-
-  > :last-child {
-    margin-bottom: 0;
-  }
-}
-
-.site-page-not-found {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  justify-content: center;
-  text-align: center;
-}
-
-details {
-  summary {
-    list-style-position: outside;
-  }
-}
-
-article {
-  h1, h2, h3 {
-    padding-top: 100px;
-    margin-top: -80px;
-  }
-}
-
-.table-of-contents {
-  ul ul {
-    display: none;
-  }
-}
+// .table-of-contents {
+//   ul ul {
+//     display: none;
+//   }
+// }
