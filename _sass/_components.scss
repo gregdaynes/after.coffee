@@ -5,9 +5,18 @@
   color: var(--c-base);
   overflow-x: auto;
 
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--c-subtle);
+    color: var(--c-standout);
+  }
+
   // First comment in the code block - usually a filename
   .c1 {
     color: var(--c-muted);
+
+    @media (prefers-color-scheme: dark) {
+      color: var(--c-muted);
+    }
   }
 }
 
