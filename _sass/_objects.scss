@@ -29,9 +29,5 @@
 }
 
 .callout {
-  margin: 0 -1em;
-
-  > :last-child {
-    margin-bottom: 0;
-  }
+  @extend %callout;
 }

@@ -12,6 +12,11 @@ layout: compress
     <link rel="stylesheet" href="/assets/css/stylesheet.css">
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
 
+    <style type="text/css">
+    {% capture inline_styles %}{% include _critical.scss %}{% endcapture %}
+    {{ inline_styles | scssify }}
+    </style>
+
     {% seo %}
   </head>
 

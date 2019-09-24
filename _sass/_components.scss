@@ -1,6 +1,6 @@
 // Code snippet highlighting
 .highlight {
-  @extend .callout;
+  @extend %callout;
   background-color: black;
   color: white;
   overflow-x: auto;
