@@ -34,3 +34,25 @@ article {
 .footnotes {
   border-top: 1px solid var(--c-gray-l5);
 }
+
+article footer {
+  display: flex;
+  background-color: var(--c-gray-l6);
+  color: var(--c-gray-d4);
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 0.4em 1em;
+}
+
+.tags {
+  list-style: none;
+  padding: 0;
+  display: inline;
+
+  li {
+    display: inline;
+    background-color: var(--c-gray-l4);
+    padding: 0 0.2em;
+    margin: 0 0.2em;
+  }
+}

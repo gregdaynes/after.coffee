@@ -4,11 +4,7 @@ layout: default
 <article>
   <header>
     <h1>{{ page.title }}</h1>
-    <p>
-      {{ page.author }} |
-      {{ page.date | date: "%Y-%m-%d" }}<br />
-      Tags: {{ page.tags | join: ", " }}
-    </p>
+
   </header>
 
   {% if page.article.link %}
@@ -26,4 +22,11 @@ layout: default
   </section>
 
   {{ content }}
+
+  <footer class="callout">
+    {{ page.title }}
+    <span>by: {{ page.author }}</span>
+    <span>date: {{ page.date | date: "%Y-%m-%d" }}</span>
+    <span>tags: <ul class="tags"><li>{{ page.tags | join: "</li><li>" }}</li></ul></span>
+  </footer>
 </article>

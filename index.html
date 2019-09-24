@@ -6,8 +6,11 @@ layout: default
   {% capture name %}{{ category[0] }}{% endcapture %}
   {% assign posts = category[1] %}
 
-  <h1>{{ name | capitalize }}</h1>
-  <p><em>{{ site.data.categories[name].description }}</em></p>
+  <h2>
+    {{ name | capitalize }}
+    <small><em>{{ site.data.categories[name].description }}</em></small>
+  </h2>
+
 
   {% include collection-summary.html posts=posts %}
 {% endfor %}
