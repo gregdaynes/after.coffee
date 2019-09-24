@@ -1,36 +1,58 @@
 :root {
-  --c-base: white;
-  --c-subtle: ghostwhite;
+  --c-blue:   hsl(211, 100%, 50%);
+  --c-green:  hsl(135,  59%, 49%);
+  --c-indigo: hsl(241,  61%, 59%);
+  --c-orange: hsl(35,  100%, 50%);
+  --c-pink:   hsl(349, 100%, 59%);
+  --c-purple: hsl(280,  68%, 60%);
+  --c-red:    hsl(3,   100%, 59%);
+  --c-teal:   hsl(199,  94%, 67%);
+  --c-yellow: hsl(48,  100%, 50%);
 
-  --c-standout: black;
-  --c-muted: dimgrey;
-  --c-medium: silver;
+  --c-gray:   hsl(240,  2%, 57%);
+  --c-gray-2: hsl(240,  3%, 69%);
+  --c-gray-3: hsl(240,  5%, 79%);
+  --c-gray-4: hsl(240,  6%, 83%);
+  --c-gray-5: hsl(240, 11%, 91%);
+  --c-gray-6: hsl(240, 24%, 96%);
 
-  --c-info: seashell;
-  --c-info-dark: antiquewhite;
+  --c-gray-d7: black;
+  --c-gray-d6: hsl(240,  3%, 11%);
+  --c-gray-d5: hsl(240,  2%, 18%);
+  --c-gray-d4: hsl(240,  2%, 23%);
+  --c-gray-d3: hsl(240,  1%, 29%);
+  --c-gray-d2: hsl(240,  1%, 39%);
+  --c-gray:   hsl(240,  2%, 57%);
+  --c-gray-l2: hsl(240,  3%, 69%);
+  --c-gray-l3: hsl(240,  5%, 79%);
+  --c-gray-l4: hsl(240,  6%, 83%);
+  --c-gray-l5: hsl(240, 11%, 91%);
+  --c-gray-l6: hsl(240, 24%, 96%);
+  --c-gray-l7: white;
 
-  --c-link: blue;
-  --c-link-visited: purple;
-  --c-link-active: red;
-}
+  @media (prefers-color-scheme: dark) {
+    --c-blue:   hsl(210, 100%, 52%);
+    --c-green:  hsl(135,  64%, 50%);
+    --c-indigo: hsl(241,  73%, 63%);
+    --c-orange: hsl(36,  100%, 52%);
+    --c-pink:   hsl(348, 100%, 61%);
+    --c-purple: hsl(280,  85%, 65%);
+    --c-red:    hsl(3,   100%, 61%);
+    --c-teal:   hsl(197, 100%, 70%);
+    --c-yellow: hsl(50,  100%, 52%);
 
-
-/* Light mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --c-base: black;
-    --c-subtle: slategrey;
-
-    --c-standout: white;
-    --c-muted: silver;
-    --c-medium: silver;
-
-    --c-info: navy;
-    --c-info-dark: midnightblue;
-
-    --c-link: dodgerblue;
-    --c-link-visited: blueviolet;
-    --c-link-active: red;
+    --c-gray-l7: black;
+    --c-gray-l6: hsl(240,  3%, 11%);
+    --c-gray-l5: hsl(240,  2%, 18%);
+    --c-gray-l4: hsl(240,  2%, 23%);
+    --c-gray-l3: hsl(240,  1%, 29%);
+    --c-gray-l2: hsl(240,  1%, 39%);
+    --c-gray:   hsl(240,  2%, 57%);
+    --c-gray-d2: hsl(240,  3%, 69%);
+    --c-gray-d3: hsl(240,  5%, 79%);
+    --c-gray-d4: hsl(240,  6%, 83%);
+    --c-gray-d5: hsl(240, 11%, 91%);
+    --c-gray-d6: hsl(240, 24%, 96%);
+    --c-gray-d7: white;
   }
 }
-

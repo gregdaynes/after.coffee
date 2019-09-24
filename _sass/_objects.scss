@@ -7,17 +7,12 @@
   flex-direction: column;
 }
 
-.background-yellow {
-  background-color: var(--c-info);
-}
-
-.border-yellow {
-  border-color: var(--c-info-dark);
+.call-to-action {
+  background-color: var(--c-gray-l5);
 }
 
 .border-solid {
-  border-size: 1px;
-  border-style: solid;
+  border: 1px solid var(--c-gray-d6);
 }
 
 .pad-md {
@@ -30,4 +25,8 @@
 
 .callout {
   @extend %callout;
+}
+
+.text-inverted {
+  color: var(--c-gray-l7);
 }

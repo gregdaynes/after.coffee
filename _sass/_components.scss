@@ -1,22 +1,13 @@
 // Code snippet highlighting
 .highlight {
   @extend %callout;
-  background-color: var(--c-standout);
-  color: var(--c-base);
+  background-color: var(--c-gray-l6);
+  color: var(--c-gray-d6);
   overflow-x: auto;
-
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--c-subtle);
-    color: var(--c-standout);
-  }
 
   // First comment in the code block - usually a filename
   .c1 {
-    color: var(--c-muted);
-
-    @media (prefers-color-scheme: dark) {
-      color: var(--c-muted);
-    }
+    color: var(--c-gray);
   }
 }
 
@@ -41,5 +32,5 @@ article {
 }
 
 .footnotes {
-  border-top: 1px solid var(--c-medium);
+  border-top: 1px solid var(--c-gray-l5);
 }
