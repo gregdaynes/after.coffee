@@ -1,5 +1,3 @@
-# coffee_test.rb
-
 require 'minitest/autorun'
 require_relative 'coffee'
 

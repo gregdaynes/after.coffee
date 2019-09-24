@@ -1,5 +1,3 @@
-# coffee.rb
-
 class Coffee
   attr_reader :flavours, :extras, :rating
 

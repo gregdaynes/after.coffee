@@ -1,5 +1,3 @@
-
-
 Run options: --seed 35012
 
 # Running:

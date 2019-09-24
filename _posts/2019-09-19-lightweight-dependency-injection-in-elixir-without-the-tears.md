@@ -1,6 +1,5 @@
 ---
-categories: readings
-size: snack
+categories: 1oz
 summary: Dependency injection is a tool to allow the runtime to pass dependencies into a function. This can be used to swap out implementations based on data being handled, or as a way to provide a mock implementation for testing.
 
 article:

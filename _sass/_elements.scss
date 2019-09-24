@@ -1,0 +1,106 @@
+html {
+  // Correct the line height in all browsers.
+  line-height: 1.6;
+  // Prevent adjustments of font size after orientation changes in iOS.
+  -webkit-text-size-adjust: 100%;
+
+  font-size: 16px;
+  font-family: sans-serif;
+
+  box-sizing: border-box;
+  *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  @media screen and (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: white;
+  min-height: 100vh;
+  padding: 0 1em;
+  margin: 0;
+
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 65ch;
+}
+
+h1,
+h2,
+h3 {
+  margin: 2.75rem 0 1rem;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+h1 {
+  // Correct the margin on `h1` elements within `section` and
+  // `article` contexts in Chrome, Firefox, and Safari.
+  margin: 0.67em 0;
+  font-size: 1.953em;
+}
+
+h2 {
+  font-size: 1.563em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+p {
+  margin-bottom: 1.25em;
+}
+
+small,
+.small {
+  // Add the correct font size in all browsers.
+  font-size: 0.8em;
+}
+
+b,
+strong {
+  // Add the correct font weight in Chrome, Edge, and Safari.
+  font-weight: bolder;
+}
+
+code {
+  // Correct the inheritance and scaling of font size in all browsers.
+  font-family: monospace, monospace;
+
+  p & {
+    background-color: ghostwhite;
+    font-style: italic;
+  }
+}
+
+details {
+  // Add the correct display in Edge, IE 10+, and Firefox.
+  display: block;
+}
+
+summary {
+  // Add the correct display in all browsers.
+  display: list-item;
+  list-style-position: outside;
+}
+
+pre {
+  // Correct the inheritance and scaling of font size in all browsers.
+  font-family: monospace, monospace;
+  // Correct the odd `em` font sizing in all browsers.
+  font-size: 1em;
+  margin-top: 0;
+  padding: 0.4em 1em;
+}

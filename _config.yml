@@ -8,6 +8,8 @@ url: "https://after.coffee"
 language: "en-GB"
 kramdown:
   parse_block_html: true
+sass:
+  style: compressed
 
 defaults:
   - scope:

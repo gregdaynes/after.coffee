@@ -1,7 +1,6 @@
 ---
 summary: Minitest is a comprehensive testing library that ships with Ruby. Take a deep look into what Minitest is, how to use it, some of it's features and how it compares to RSpec.
-categories: articles
-size: meal
+categories: 12oz
 tags:
   - ruby
   - testing
@@ -22,9 +21,10 @@ Minitest provides support for TDD, BDD, Mocks/Stubs, Benchmarking, can run Capyb
 
 Here is a quick example of a test in Minitest
 
-{% assign path = "_getting-started-with-minitest/simple-example.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" %}
+{% highlight ruby %}
+{% include_relative _getting-started-with-minitest/simple-example.rb %}
+{% endhighlight %}
+
 
 How to start testing with Minitest
 ----------------------------------
@@ -40,9 +40,10 @@ _It is recommended to follow the Minitest convention by ending the file name wit
 Next, add `minitest/autorun` as a requirement
 Then create a new class `CoffeeTest` as a subclass of `Minitest::Test`
 
-{% assign path = "_getting-started-with-minitest/01a/coffee_test.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" filename="coffee_test.rb" %}
+{% highlight ruby %}
+# coffee_test.rb
+{% include_relative _getting-started-with-minitest/01a/coffee_test.rb %}
+{% endhighlight %}
 
 _You can add more gems, and utilities to add even more power to Minitest, but keep it simple to start._
 
@@ -56,9 +57,10 @@ _getting-started-with-minitest tests are just plain old Ruby methods._
 
 Start by adding a new method starting with `test_` to the class.
 
-{% assign path = "_getting-started-with-minitest/01b/coffee_test.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" filename="coffee_test.rb" %}
+{% highlight ruby %}
+# coffee_test.rb
+{% include_relative _getting-started-with-minitest/01b/coffee_test.rb %}
+{% endhighlight %}
 
 The `test_` prefix for the method is how Minitest distinguishes Ruby test methods and other methods in the test file, (like helper methods that handle setup, or create data for use across multiple tests).
 
@@ -72,9 +74,10 @@ To test the opposite, blocks or calls returning false, use `refute`. The default
 
 Now write an assertion, in this case, we're going to test that a new instance of `Coffee` is still a `Coffee`.
 
-{% assign path = "_getting-started-with-minitest/01c/coffee_test.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" filename="coffee_test.rb" %}
+{% highlight ruby %}
+# coffee_test.rb
+{% include_relative _getting-started-with-minitest/01c/coffee_test.rb %}
+{% endhighlight %}
 
 This is done using the assertion `assert_instance_of`, which takes a `class`, and an `obj`, checking whether or not the `obj` is an instance of `class`.
 
@@ -84,15 +87,15 @@ Running a test file is the same as any Ruby script.
 
 Start up a Terminal in the same location as your test file, and run the following command.
 
-{% assign path = "_getting-started-with-minitest/bash_ruby.sh" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="bash" %}
+{% highlight bash %}
+{% include_relative _getting-started-with-minitest/bash_ruby.sh %}
+{% endhighlight %}
 
 The output should be similar to the following.
 
-{% assign path = "_getting-started-with-minitest/bash_output_fail.sh" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="bash" %}
+{% highlight bash %}
+{% include_relative _getting-started-with-minitest/bash_output_fail.sh %}
+{% endhighlight %}
 
 Great! Sort of, the test ran successfully, but the it failed.
 
@@ -110,23 +113,21 @@ The test ran quickly, but failed. Look over the error. It indicates that `Coffee
 
 Add the `Coffee` class.
 
-{% assign path = "_getting-started-with-minitest/01d/coffee.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" filename="coffee.rb" %}
+{% highlight ruby %}
+# coffee.rb
+{% include_relative _getting-started-with-minitest/01d/coffee.rb %}
 
-{% assign path = "_getting-started-with-minitest/01d/coffee_test.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" filename="coffee_test.rb" %}
+# coffee.rb
+{% include_relative _getting-started-with-minitest/01d/coffee_test.rb %}
+{% endhighlight %}
 
 And now, run the test again. Same command as before
 
-{% assign path = "_getting-started-with-minitest/bash_ruby.sh" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="bash" %}
+{% highlight bash %}
+{% include_relative _getting-started-with-minitest/bash_ruby.sh %}
 
-{% assign path = "_getting-started-with-minitest/bash_output_pass.sh" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="bash" %}
+{% include_relative _getting-started-with-minitest/bash_output_pass.sh %}
+{% endhighlight %}
 
 The test now passes.
 
@@ -138,13 +139,13 @@ Add a test that will check an instance of Coffee, will return a list of flavours
 
 The assertion to use here will be `assert_includes`. Which takes a `collection` and an `obj`, validating that the obj is in the collection.
 
-{% assign path = "_getting-started-with-minitest/01e/coffee.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" filename="coffee.rb" %}
+{% highlight ruby %}
+# coffee.rb
+{% include_relative _getting-started-with-minitest/01e/coffee.rb %}
 
-{% assign path = "_getting-started-with-minitest/01e/coffee_test.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" filename="coffee_test.rb" %}
+# coffee_test.rb
+{% include_relative _getting-started-with-minitest/01e/coffee_test.rb %}
+{% endhighlight %}
 
 ## How to write tests using Spec
 
@@ -166,25 +167,25 @@ _Make sure your test follows the class you're resting. This wasn't a requirement
 
 Next, we'll replace our class `CoffeeTest` with a describe block.
 
-{% assign path = "_getting-started-with-minitest/02a/coffee_abbr.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" filename="coffee.rb" %}
+{% highlight ruby %}
+# coffee.rb
+{% include_relative _getting-started-with-minitest/02a/coffee_abbr.rb %}
 
-{% assign path = "_getting-started-with-minitest/02a/coffee_test_abbr.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" filename="coffee_test.rb" %}
+# coffee_test.rb
+{% include_relative _getting-started-with-minitest/02a/coffee_test_abbr.rb %}
+{% endhighlight %}
 
 The big change here is
 
-{% assign path = "_getting-started-with-minitest/02a/change_from.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" %}
+{% highlight ruby %}
+{% include_relative _getting-started-with-minitest/02a/change_from.rb %}
+{% endhighlight %}
 
 becomes
 
-{% assign path = "_getting-started-with-minitest/02a/change_to.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" %}
+{% highlight ruby %}
+{% include_relative _getting-started-with-minitest/02a/change_to.rb %}
+{% endhighlight %}
 
 Everything else stays the same.
 
@@ -196,13 +197,13 @@ We're now ready to continue upgrading our tests to specs.
 
 Next, we'll replace `test_` methods with `it` statements. This will make our tests read more like plain language, and less like a Ruby method.
 
-{% assign path = "_getting-started-with-minitest/02b/coffee_abbr.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" filename="coffee.rb" %}
+{% highlight ruby %}
+# coffee.rb
+{% include_relative _getting-started-with-minitest/02b/coffee_abbr.rb %}
 
-{% assign path = "_getting-started-with-minitest/02b/coffee_test_abbr.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" filename="coffee_test.rb" %}
+# coffee_test.rb
+{% include_relative _getting-started-with-minitest/02b/coffee_test_abbr.rb %}
+{% endhighlight %}
 
 `it` statements define an expectation with a plain english name. If no name is passed in, it will default to anonymous. For readability, it's recommended to add a name to all `it` statements.
 
@@ -214,13 +215,13 @@ _Under the hood, an `it` statement gets converted into a `test_the_thing` method
 
 _For our existing tests, we don't have anything that needs it. We're going to make our possible flavours more complicated than just a string so we can try using `let`_
 
-{% assign path = "_getting-started-with-minitest/02c/coffee.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" filename="coffee.rb" %}
+{% highlight ruby %}
+# coffee.rb
+{% include_relative _getting-started-with-minitest/02c/coffee.rb %}
 
-{% assign path = "_getting-started-with-minitest/02c/coffee_test.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" filename="coffee_test.rb" %}
+# coffee_test.rb
+{% include_relative _getting-started-with-minitest/02c/coffee_test.rb %}
+{% endhighlight %}
 
 You'll notice that we defined the `let` statement outside of the `it` block. This is for reuse in other tests. And because it's memoized, every other test that calls it will use the same value that was returned the first time it was called.
 
@@ -232,13 +233,13 @@ Another common pattern is to put shared `let` statements at the top or at least 
 
 Subject is a lazy man's generator. It will return the block you specify as `subject`.
 
-{% assign path = "_getting-started-with-minitest/02d/coffee.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" filename="coffee.rb" %}
+{% highlight ruby %}
+# coffee.rb
+{% include_relative _getting-started-with-minitest/02d/coffee.rb %}
 
-{% assign path = "_getting-started-with-minitest/02d/coffee_test.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" filename="coffee_test.rb" %}
+# coffee_test.rb
+{% include_relative _getting-started-with-minitest/02d/coffee_test.rb %}
+{% endhighlight %}
 
 You'll notice that we've placed `subject` above both of our test cases, it's also not overly complex. But allows us to not write `Coffee.new` all over the place.
 
@@ -249,27 +250,28 @@ Rake is a task runner for Ruby. This post won't show you how to use or write Rak
 
 Add Rake to your `Gemfile`
 
-{% assign path = "_getting-started-with-minitest/install_rake.sh" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="bash" %}
+{% highlight bash %}
+{% include_relative _getting-started-with-minitest/install_rake.sh %}
+{% endhighlight %}
 
 Add the following to `rakefile.rb`.
 
-{% assign path = "_getting-started-with-minitest/rakefile.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" filename="rakefile.rb" %}
+{% highlight ruby %}
+# rakefile.rb
+{% include_relative _getting-started-with-minitest/rakefile.rb %}
+{% endhighlight %}
 
 This will find all files ending with `_test.rb`, and then call each using `Rake::TestTask`.
 
-{% assign path = "_getting-started-with-minitest/bash_rake_task.sh" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="bash" %}
+{% highlight bash %}
+{% include_relative _getting-started-with-minitest/bash_rake_task.sh %}
+{% endhighlight %}
 
 Which will output results that looks exactly it you called the test directly. The difference is, the rake task groups all the tests to gether.
 
-{% assign path = "_getting-started-with-minitest/bash_rake_task_output.sh" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="bash" %}
+{% highlight bash %}
+{% include_relative _getting-started-with-minitest/bash_rake_task_output.sh %}
+{% endhighlight %}
 
 ## Finish the test suite
 
@@ -283,43 +285,43 @@ Now we'll take a look into more of the features available in Minitest.
 
 Minitest comes with a ton of assertions built in, which will cover almost every test case you can think of. We'll go over a few of the more common assertions below.
 
-_getting-started-with-minitest also assertions always check for a postive result. If you want to test for negative / false results, each assertion has a negative-twin `refute`. Which take the same params as their positive sibling, but make sure the result is the opposite.
+Minitest assertions always check for a postive result. If you want to test for negative / false results, each assertion has a negative-twin `refute`. Which take the same params as their positive sibling, but make sure the result is the opposite.
 
 `assert(predicate, msg = nil)` fails unless `predicate` returns true
 
-{% assign path = "_getting-started-with-minitest/assertions/assert_test.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" %}
+{% highlight ruby %}
+{% include_relative _getting-started-with-minitest/assertions/assert_test.rb %}
+{% endhighlight %}
 
 `assert_empty(obj, msg = nil)` fails unless `obj` is empty
 
-{% assign path = "_getting-started-with-minitest/assertions/assert_empty_test.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" %}
+{% highlight ruby %}
+{% include_relative _getting-started-with-minitest/assertions/assert_empty_test.rb %}
+{% endhighlight %}
 
 `assert_includes(collection, obj, msg = nil)` fails unless `collection` includes `obj`
 
-{% assign path = "_getting-started-with-minitest/assertions/assert_includes_test.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" %}
+{% highlight ruby %}
+{% include_relative _getting-started-with-minitest/assertions/assert_includes_test.rb %}
+{% endhighlight %}
 
 `assert_match(matcher, obj,  message = nil)` fails unless `matcher` =~ `obj`
 
-{% assign path = "_getting-started-with-minitest/assertions/assert_match_test.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" %}
+{% highlight ruby %}
+{% include_relative _getting-started-with-minitest/assertions/assert_match_test.rb %}
+{% endhighlight %}
 
 `assert_nil(obj, msg = nil)` fails unless `obj` is `nil`
 
-{% assign path = "_getting-started-with-minitest/assertions/assert_nil_test.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" %}
+{% highlight ruby %}
+{% include_relative _getting-started-with-minitest/assertions/assert_nil_test.rb %}
+{% endhighlight %}
 
 `assert_raise(*exp)` fails unless the block raises an exception
 
-{% assign path = "_getting-started-with-minitest/assertions/assert_raises_test.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" %}
+{% highlight ruby %}
+{% include_relative _getting-started-with-minitest/assertions/assert_raises_test.rb %}
+{% endhighlight %}
 
 Minitest comes with a wide range of assertions for testing. You can see all of the available assertions and refutions in the [Ruby Docs - Assertions](http://ruby-doc.org/stdlib-2.0.0/libdoc/minitest/rdoc/MiniTest/Assertions.html)
 
@@ -327,8 +329,10 @@ Minitest comes with a wide range of assertions for testing. You can see all of t
 
 If you've watched the output as you've run throug Minispec, you'll probably have noticed the following
 
-{% capture include %}Run options: --seed 59802{% endcapture %}
-{% include snippet.html content=include language="bash" nofile=true %}
+
+{% highlight bash %}
+Run options: --seed 59802
+{% endhighlight %}
 
 A seed is a representation of the order of tests, as well as the randomized data inside your tests. Keeping track of seeds allows you, or someone else to rerun the test exactly as a previous time. This helps for debugging failures.
 
@@ -336,13 +340,15 @@ To specify seeds you need to pass in the value when running your test suite.
 
 If you run tests using the Ruby CLI
 
-{% capture include %}ruby test -s 59802{% endcapture %}
-{% include snippet.html content=include language="bash" nofile=true %}
+{% highlight bash %}
+ruby test -s 59802
+{% endhighlight %}
 
 If you run tests using a Rake Task
 
-{% capture include %}rake test SEED=59802{% endcapture %}
-{% include snippet.html content=include language="bash" nofile=true %}
+{% highlight bash %}
+rake test SEED=59802
+{% endhighlight %}
 
 ### Setting up and tearing down tests
 
@@ -350,15 +356,15 @@ As you start building out tests for your code. You'll notice patterns of setup, 
 
 Minitest has you covered for wrapping each test with setup code, using `setup` and `teardown`
 
-{% assign path = "_getting-started-with-minitest/setup_teardown_test.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" %}
+{% highlight ruby %}
+{% include_relative _getting-started-with-minitest/setup_teardown_test.rb %}
+{% endhighlight %}
 
 If you're using specs, you can also use `before` and `after`
 
-{% assign path = "_getting-started-with-minitest/before_after_test.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" %}
+{% highlight ruby %}
+{% include_relative _getting-started-with-minitest/before_after_test.rb %}
+{% endhighlight %}
 
 _`setup`, `teardown`, `before`, and `after` will be run around **each** test. This can add significant delays to your tests if you're putting complex setup logic in the setup code. You can add the gem `minitest-hooks` to get access to `before_all`, `after_all` which runs around all tests in the test file. This is more commonly used when testing many parts of an instance that has a decent amount of setup_
 
@@ -368,9 +374,9 @@ There comes a time when you are testing your code, and you realize you need to t
 
 Using `skip` is the same as using any of the `assert`, `refute` methods.
 
-{% assign path = "_getting-started-with-minitest/skip_test.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" %}
+{% highlight ruby %}
+{% include_relative _getting-started-with-minitest/skip_test.rb %}
+{% endhighlight %}
 
 Skip statements have an advantage over leaving a comment. That is the test reporter will show a list of all the skipped tests, so if you forget one, there is a small indicator to let you know you still have some work to do.
 
@@ -382,13 +388,13 @@ Like other testing libraries, `stub`s temporarily replace a method and return th
 
 Stubs are great for temporarily replacing methods that may take too long to run in your test suite, or are incapable of running in the environment. **This does not mean that method should never be tested**. Just that the method might be better tested elsewhere.
 
-{% assign path = "_getting-started-with-minitest/cup_slow_drink_abbr.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" %}
+{% highlight ruby %}
+{% include_relative _getting-started-with-minitest/cup_slow_drink_abbr.rb %}
+{% endhighlight %}
 
-{% assign path = "_getting-started-with-minitest/stub_test.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" %}
+{% highlight ruby %}
+{% include_relative _getting-started-with-minitest/stub_test.rb %}
+{% endhighlight %}
 
 Unlike a `Mock` the method needs to exist prior to stubbing. You can't use a stub on a method that does not exist.
 
@@ -410,15 +416,17 @@ Rails by default uses Minitest to run your tests. In fact, Rails itself is teste
 
 The default Rails `test_helper.rb` is configured to run `test` style tests, it looks like the following.
 
-{% assign path = "_getting-started-with-minitest/rails_test_helper_default.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" filename="test_helper.rb" %}
+{% highlight ruby %}
+# test_helper.rb
+{% include_relative _getting-started-with-minitest/rails_test_helper_default.rb %}
+{% endhighlight %}
 
 We can add support for Minitest::Spec DSL pretty easily.
 
-{% assign path = "_getting-started-with-minitest/rails_test_helper_spec.rb" %}
-{% capture include %}{% include_relative {{ path }} %}{% endcapture %}
-{% include snippet.html content=include language="ruby" filename="test_helper.rb" %}
+{% highlight ruby %}
+# test_helper.rb
+{% include_relative _getting-started-with-minitest/rails_test_helper_spec.rb %}
+{% endhighlight %}
 
 With spec support inside `test_helper.rb` you can now write test, specs, and any combination of features to test your Rails code. _MAGIC_
 
@@ -428,6 +436,5 @@ This post only covers a small portion of what Minitest can do. That is not inclu
 
 The following links should help you on your way to mastering Minitest.
 
-[SeattleRB - Minitest](https://github.com/seattlerb/minitest)
-
-[Ruby Docs - Minitest](http://ruby-doc.org/stdlib-2.0.0/libdoc/minitest/rdoc/MiniTest.html)
++ [SeattleRB - Minitest](https://github.com/seattlerb/minitest)
++ [Ruby Docs - Minitest](http://ruby-doc.org/stdlib-2.0.0/libdoc/minitest/rdoc/MiniTest.html)

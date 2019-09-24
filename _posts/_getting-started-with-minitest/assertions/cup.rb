@@ -1,5 +1,3 @@
-# cup.rb
-
 class Cup
   attr_accessor :filling
   attr_reader :filling

@@ -1,5 +1,3 @@
-# before_after_test.rb
-
 require_relative 'test_helper'
 
 describe 'Coffee' do

@@ -1,0 +1,49 @@
+// Code snippet highlighting
+.highlight {
+  @extend .callout;
+  background-color: black;
+  color: white;
+  overflow-x: auto;
+
+  // First comment in the code block - usually a filename
+  .c1 {
+    color: dimgrey;
+  }
+}
+
+.site-header {
+  background-color: white;
+  margin: 0 -1em;
+  position: sticky;
+  top: 0;
+  text-align: center;
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.site-page-not-found {
+  flex-grow: 1;
+  justify-content: center;
+  text-align: center;
+}
+
+// anchor offset for jump-to links
+article {
+  h1, h2, h3 {
+    padding-top: 100px;
+    margin-top: -80px;
+  }
+}
+
+.table-of-contents {
+  ul ul {
+    display: none;
+  }
+}
+
+.footnotes {
+  border-top: 1px solid silver;
+}
