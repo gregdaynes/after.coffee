@@ -10,6 +10,7 @@ kramdown:
   parse_block_html: true
 sass:
   style: compressed
+permalink: /:title/index.html
 
 defaults:
   - scope:
