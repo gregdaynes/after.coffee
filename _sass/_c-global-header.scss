@@ -1,0 +1,27 @@
+[data-component=global-header] {
+  font-family: sans-serif;
+  display: flex;
+  padding: $gap;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    padding-left: $gap;
+  }
+
+  a {
+    color: var(--c-gray-d7);
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  i {
+    display: inline-block;
+    max-width: 4ch;
+  }
+
+  p {
+    margin: 0;
+    color: var(--c-gray-d3);
+  }
+}

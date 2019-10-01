@@ -1,0 +1,33 @@
+[data-component=category-list] {
+  padding: 0 $gap;
+}
+
+[data-component=category] {
+  margin-bottom: $gap-2x;
+
+  > h1 {
+    font-family: sans-serif;
+    margin: 0 0 $gap-half;
+    line-height: 1;
+  }
+
+  > p {
+    margin-top: $gap-half;
+    color: var(--c-gray-d4);
+    font-family: sans-serif;
+  }
+}
+
+[data-component=article-list] {
+}
+
+[data-component="article-summary"] {
+  h1 {
+    font-family: sans-serif;
+    margin-bottom: $gap-half;
+  }
+
+  p {
+    margin: $gap-half 0;
+  }
+}

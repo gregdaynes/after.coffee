@@ -1,0 +1,33 @@
+[data-component=global-footer] {
+  font-family: sans-serif;
+  padding: 0 $gap $gap-half;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 48em) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+[data-component=social-links] {
+  order: 1;
+
+  @media screen and (min-width: 48em) {
+    width: 100%;
+  }
+}
+
+[data-component=legal] {
+  order: 2;
+
+  @media screen and (min-width: 48em) {
+    display: flex;
+  }
+
+  nav {
+    @media screen and (min-width: 48em) {
+      padding: 0 $gap;
+    }
+  }
+}

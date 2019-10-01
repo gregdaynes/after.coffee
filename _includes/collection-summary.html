@@ -1,6 +1,7 @@
 {% for post in include.posts %}
-  <details {% if post.summary %}open{% endif %}>
-    <summary><a href="{{ post.url }}">{{ post.title }}</a> <small class="text-muted">{{ post.date | date: "%Y-%m" }}</small></summary>
+  <article data-component="article-summary">
+    <h1>{{ post.title }}</h1>
     <p>{{ post.summary }}</p>
-  </details>
+      <a href="{{ post.url }}">Read Article</a>
+  </article>
 {% endfor %}

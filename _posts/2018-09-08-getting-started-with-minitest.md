@@ -11,7 +11,7 @@ tags:
 {% include toc.html %}
 
 What is Minitest?
------------------
+-------------------
 
 Minitest is a complete, lightweight suite of testing utilities for Ruby.
 

@@ -1,58 +1,21 @@
 // Code snippet highlighting
 .highlight {
-  @extend %callout;
-  background-color: var(--c-gray-l6);
-  color: var(--c-gray-d6);
+  background-color: var(--c-gray-d6);
+  margin: 0;
+  color: var(--c-gray-l7);
+  padding: $gap-quarter $gap;
   overflow-x: auto;
 
-  // First comment in the code block - usually a filename
+  @media (preferes-color-scheme: dark) {
+    background-color: var(--c-gray-l6);
+    color: var(--c-gray-d7);
+  }
+
   .c1 {
     color: var(--c-gray);
-  }
-}
 
-.site-page-not-found {
-  flex-grow: 1;
-  justify-content: center;
-  text-align: center;
-}
-
-// anchor offset for jump-to links
-article {
-  h1, h2, h3 {
-    padding-top: 100px;
-    margin-top: -80px;
-  }
-}
-
-.table-of-contents {
-  ul ul {
-    display: none;
-  }
-}
-
-.footnotes {
-  border-top: 1px solid var(--c-gray-l5);
-}
-
-article footer {
-  display: flex;
-  background-color: var(--c-gray-l6);
-  color: var(--c-gray-d4);
-  justify-content: space-between;
-  flex-direction: column;
-  padding: 0.4em 1em;
-}
-
-.tags {
-  list-style: none;
-  padding: 0;
-  display: inline;
-
-  li {
-    display: inline;
-    background-color: var(--c-gray-l4);
-    padding: 0 0.2em;
-    margin: 0 0.2em;
+    @media (preferes-color-scheme: dark) {
+      background-color: var(--c-gray-d6);
+    }
   }
 }

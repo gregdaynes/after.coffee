@@ -1,32 +1,26 @@
 ---
 layout: default
 ---
-<article>
-  <header>
+<article data-component="content-article">
+  <header data-component="content-header">
     <h1>{{ page.title }}</h1>
+    <!-- <span>{{ page.author }}</span> -->
+    <!-- <span>{{ page.date | date: "%Y-%m-%d" }}</span> -->
+    <!-- <span><ul><li>{{ page.tags | join: "</li><li>" }}</li></ul></span> -->
 
+    <section><p>{{ page.summary }}</p></section>
+
+    {% if page.article.link %}
+    <div data-component="content-reference">
+      <p><strong>What I'm referring to</strong></p>
+
+      <p>
+        <a href="{{ page.article.link }}">{{ page.article.title }}</a> - <small>(<a href="{{page.article.archive}}">Cached</a>)</small><br />
+        by {{ page.article.author }} - <a href="https://twitter.com/{{page.article.twitter}}">@{{page.article.twitter}}</a>
+      </p>
+    </div>
+    {% endif %}
   </header>
 
-  {% if page.article.link %}
-  <div class="callout call-to-action pad-md readings-source">
-    <strong>What I'm referring to</strong>
-    <p>
-      <a href="{{ page.article.link }}">{{ page.article.title }}</a> - <small>(<a href="{{page.article.archive}}">Cached</a>)</small><br />
-      by {{ page.article.author }} - <a href="https://twitter.com/{{page.article.twitter}}">@{{page.article.twitter}}</a>
-    </p>
-  </div>
-  {% endif %}
-
-  <section>
-    <p><em>{{ page.hook }}</em></p>
-  </section>
-
-  {{ content }}
-
-  <footer class="callout">
-    {{ page.title }}
-    <span>by: {{ page.author }}</span>
-    <span>date: {{ page.date | date: "%Y-%m-%d" }}</span>
-    <span>tags: <ul class="tags"><li>{{ page.tags | join: "</li><li>" }}</li></ul></span>
-  </footer>
+  <div>{{ content }}</div>
 </article>

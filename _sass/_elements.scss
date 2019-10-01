@@ -1,130 +1,77 @@
 html {
-  // Correct the line height in all browsers.
-  line-height: 1.6;
-  // Prevent adjustments of font size after orientation changes in iOS.
-  -webkit-text-size-adjust: 100%;
+  @include reset-html;
+  @include reset-border-box;
 
+  font-family: serif;
   font-size: 16px;
-  font-family: sans-serif;
-
-  box-sizing: border-box;
-  *:before, *:after {
-    box-sizing: inherit;
-  }
 
   overflow-y: scroll;
-  scroll-behavior: smooth;
-  @media screen and (prefers-reduced-motion: reduce) {
-    scroll-behavior: auto;
-  }
+  @include smooth-scroll;
 }
 
 body {
-  background-color: var(--c-gray-l7);
-  min-height: 100vh;
-  padding: 0 1em;
-  margin: 0;
-  color: var(--c-gray-d7);
+  @include reset-body;
 
-  font-weight: 400;
-  line-height: 1.6;
+  background-color: var(--c-gray-l7);
+  color: var(--c-gray-d7);
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 main {
   flex: 1;
-  width: 100%;
-  margin: 0 auto 1em;
-  max-width: 65ch;
-}
-
-h1,
-h2,
-h3 {
-  margin: 2.75rem 0 1rem;
-  font-weight: 400;
-  line-height: 1.15;
+  max-width: 40em;
+  // margin: 0 auto;
 }
 
 h1 {
-  // Correct the margin on `h1` elements within `section` and
-  // `article` contexts in Chrome, Firefox, and Safari.
-  margin: 0.67em 0;
-  font-size: 1.953em;
+  @include reset-h1;
 }
 
-h2 {
-  font-size: 1.563em;
-}
-
-h3 {
-  font-size: 1.25em;
-}
-
-p {
-  margin-bottom: 1.25em;
-}
-
-small,
-.small {
-  // Add the correct font size in all browsers.
-  font-size: 80%;
-  color: var(--c-gray);
-
-  h1 &,
-  h2 & {
-    font-size: 60%;
+small, .small {
+  @media screen and (min-width: 40em) {
+    @include reset-small;
   }
 }
 
-b,
 strong {
-  // Add the correct font weight in Chrome, Edge, and Safari.
-  font-weight: bolder;
+  @include reset-strong;
 }
 
 a {
   color: var(--c-blue);
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  &:visited {
-    color: var(--c-purple);
-  }
-
-  &:active {
-    color: var(--c-red);
-  }
 }
 
 code {
-  // Correct the inheritance and scaling of font size in all browsers.
-  font-family: monospace, monospace;
+  @include reset-code;
 
   p & {
-    background-color: var(--c-gray-l5);
+    color: var(--c-gray-d5);
     font-style: italic;
+    font-size: 0.8em;
+
+    &::before,
+    &::after {
+      content: '';
+      display: inline;
+      margin: $gap-quarter;
+    }
   }
 }
 
 details {
-  // Add the correct display in Edge, IE 10+, and Firefox.
-  display: block;
+  @include reset-details;
 }
 
 summary {
-  // Add the correct display in all browsers.
-  display: list-item;
-  list-style-position: outside;
+  @include reset-summary;
 }
 
 pre {
-  // Correct the inheritance and scaling of font size in all browsers.
-  font-family: monospace, monospace;
-  // Correct the odd `em` font sizing in all browsers.
-  font-size: 1em;
-  margin-top: 0;
-  padding: 0.4em 1em;
+  @include reset-pre;
+}
+
+ul {
+  padding: 0 0 0 $gap;
 }

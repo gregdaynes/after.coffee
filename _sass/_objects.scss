@@ -1,32 +1,11 @@
-.root {
-  font-size: 16px;
+[hidden] {
+  display: none;
 }
 
-.flex-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.call-to-action {
-  background-color: var(--c-gray-l5);
-}
-
-.border-solid {
-  border: 1px solid var(--c-gray-d6);
-}
-
-.pad-md {
-  padding: 1em;
-}
-
-.pad-short {
-  padding: 0.4em 1em;
-}
-
-.callout {
-  @extend %callout;
-}
-
-.text-muted {
-  color: var(--c-gray);
+[data-hidden] {
+  overflow: hidden;
+  visibility: hidden;
+  height: 0;
+  margin: -1px;
+  position: absolute;
 }

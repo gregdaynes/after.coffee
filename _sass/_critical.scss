@@ -1,5 +1,8 @@
-@import "settings";
+@import "variables";
+@import "css-variables";
 @import "tools";
+@import "reset-mixins";
 @import "elements";
 @import "objects";
-@import "component-site-header";
+@import "c-global-header";
+@import "c-global-footer";
