@@ -2,6 +2,6 @@
   <article data-component="article-summary">
     <h1>{{ post.title }}</h1>
     <p>{{ post.summary }}</p>
-      <a href="{{ post.url }}">Read Article</a>
+    <a data-component="read-more" href="{{ post.url }}">Read Article</a>
   </article>
 {% endfor %}

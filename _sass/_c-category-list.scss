@@ -9,6 +9,7 @@
     font-family: sans-serif;
     margin: 0 0 $gap-half;
     line-height: 1;
+    font-size: 1.75em;
   }
 
   > p {
@@ -19,6 +20,13 @@
 }
 
 [data-component=article-list] {
+  margin: 0 $gap;
+}
+
+[data-component=read-more] {
+  font-weight: bold;
+  color: var(--c-gray-d6);
+  font-family: sans-serif;
 }
 
 [data-component="article-summary"] {

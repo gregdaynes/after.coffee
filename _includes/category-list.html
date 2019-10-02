@@ -4,7 +4,7 @@
     {% assign posts = category[1] %}
 
     <div data-component="category">
-      <h1>{{ name | capitalize }}</h1>
+      <h1>{{ site.data.categories[name].title }}</h1>
       <p>{{ site.data.categories[name].description }}</p>
 
       <div data-component="article-list">
