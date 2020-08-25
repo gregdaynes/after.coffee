@@ -19,23 +19,26 @@
   }
 }
 
-[data-component=article-list] {
-  margin: 0 $gap;
-}
-
 [data-component=read-more] {
   font-weight: bold;
-  color: var(--c-gray-d6);
   font-family: sans-serif;
 }
 
 [data-component="article-summary"] {
+  margin-bottom: $gap;
+
   h1 {
     font-family: sans-serif;
+    margin-top: 0;
     margin-bottom: $gap-half;
   }
 
   p {
     margin: $gap-half 0;
   }
+}
+
+[data-component="article-meta"] {
+  font-family: sans-serif;
+  color: var(--c-gray);
 }

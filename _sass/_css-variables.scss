@@ -23,7 +23,7 @@
   --c-gray-l6: hsl(240, 24%, 96%);
   --c-gray-l7: white;
 
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: light) {
     --c-blue:   hsl(210, 100%, 52%);
     --c-green:  hsl(135,  64%, 50%);
     --c-indigo: hsl(241,  73%, 63%);

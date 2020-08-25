@@ -1,15 +1,5 @@
 <div data-component="category-list">
-  {% for category in site.categories %}
-    {% capture name %}{{ category[0] }}{% endcapture %}
-    {% assign posts = category[1] %}
-
-    <div data-component="category">
-      <h1>{{ site.data.categories[name].title }}</h1>
-      <p>{{ site.data.categories[name].description }}</p>
-
-      <div data-component="article-list">
-        {% include collection-summary.html posts=posts %}
-      </div>
-    </div>
-  {% endfor %}
+  <div data-component="article-list">
+    {% include collection-summary.html posts=site.posts %}
+  </div>
 </div>

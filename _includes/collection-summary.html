@@ -1,6 +1,10 @@
 {% for post in include.posts %}
   <article data-component="article-summary">
     <h1>{{ post.title }}</h1>
+    <div data-component="article-meta">
+      {{ post.date | date: "%Y-%m-%d" }}
+      {{ post.tags | join: " " }}
+    </div>
     <p>{{ post.summary }}</p>
     <a data-component="read-more" href="{{ post.url }}">Read Article</a>
   </article>

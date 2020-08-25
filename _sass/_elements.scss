@@ -21,6 +21,7 @@ body {
 
 main {
   flex: 1;
+  margin: 0 auto;
 
   @media screen and (min-width: 64em) {
     max-width: 40em;
