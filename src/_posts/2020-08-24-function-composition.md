@@ -135,25 +135,6 @@ async function createArticle(article) {
 
 Here you can read the composition top to bottom, with care in naming you don't have to be a programmer to understand what's going on.
 
-If you're a fan of promise syntax (like I am), this is starting to look a lot like promise chains. In fact, when possible, I prefer them over composition.
-
-Here's the same function above, but using promises `then` syntax which I find makes it even more legible.
-
-```js
-async function createArticle(article) {
-  debug("createArticle", article);
-
-  const connection = connect();
-
-  return connection
-    .then(useDatabase(databaseName))
-    .then(useCollection(collectionName))
-    .then(insertOne(article))
-    .then(handleCreateResult())
-    .finally(close(connection));
-}
-```
-
 Once you learn and determine how you can apply composition to your code, you'll start to see the possibility of pipes everywhere and how they can simplify even the most complex functions into simple, legible operations.
 
 Some guidlines to leave you with:

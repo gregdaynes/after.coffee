@@ -1,7 +1,9 @@
+// --- Setup
 @import "variables";
-@import "css-variables";
 @import "tools";
 @import "reset-mixins";
+// --- Rendered
+@import "css-variables";
 @import "elements";
 @import "objects";
 @import "c-global-header";
