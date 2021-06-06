@@ -11,6 +11,10 @@ kramdown:
 sass:
   style: compressed
 permalink: /:title/index.html
+source: ./src
+timezone: America/Pacific
+encoding: utf-8
+livereload: true
 
 defaults:
   - scope:
