@@ -1,10 +1,11 @@
 title: After Coffee
 owner: Gregory Daynes
 email: contact@after.coffee
-description: >-
+tagline: >-
   Code paired with coffee.
+description: ""
 baseurl: ""
-url: "https://after.coffee"
+url: "after.coffee"
 language: "en"
 kramdown:
   parse_block_html: true
@@ -15,6 +16,18 @@ source: ./src
 timezone: America/Pacific
 encoding: utf-8
 livereload: true
+autor: Gregory Daynes
+twitter:
+  card: summary
+  username: gregdaynes
+social:
+  name: Gregory Daynes
+  links:
+    - https://twitter.com/gregdaynes
+    - https://github.com/gregdaynes
+    - https://keybase.io/gregdaynes
+lang: en_CA
+locale: en_CA
 
 defaults:
   - scope:
@@ -27,3 +40,5 @@ defaults:
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-loading-lazy
+  - jekyll-contentblocks
