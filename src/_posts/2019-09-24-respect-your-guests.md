@@ -1,5 +1,5 @@
 ---
-category: 1oz
+category: small
 summary: The web has changed over the last decade, respect your guests and build with them in mind.
 tags:
   - html
@@ -19,18 +19,20 @@ But, consider the guests on on your website (or app).
 These are the people who you need to respect, you need to cater too, and who you want to come back.
 
 You know that every guest on your site is different from the last.
-+ Maybe this one has poor eyesight, or none at all.
-+ They could have an older computer with less than average hardware.
-+ It might be that viewing on your website using a feature-phone.
+
+- Maybe this one has poor eyesight, or none at all.
+- They could have an older computer with less than average hardware.
+- It might be that viewing on your website using a feature-phone.
 
 In any situation, _prioritize your guest's needs before your own_.
 
 When reaching your choice framework, ask yourself
-+ Will this impair or hinder my guests using this site?
-+ Does it support their accessibility needs?
-+ Does it respect their device, what about their bandwidth?
-+ What about their media display preference? Light or Dark to match their device. What about printed out?
-+ Does it have keyboard support?
+
+- Will this impair or hinder my guests using this site?
+- Does it support their accessibility needs?
+- Does it respect their device, what about their bandwidth?
+- What about their media display preference? Light or Dark to match their device. What about printed out?
+- Does it have keyboard support?
 
 The last point "keyboard support" is hugely impacting to guests who have trouble using a mouse due to any number of reasons. The depressing part about modern frontend frameworks, is keyboard support is usually a second class citizen, or not considered at all.
 When using that fancy, heavily customizable text input component from github, look to see if it does everything the native browser object does.
@@ -40,5 +42,3 @@ If it does, use it, love it, your guests will like it too. If it doesn't, look a
 And in the end,
 
 _Don't sacrifice your guests experience for anything._
-
-

@@ -1,0 +1,23 @@
+backend:
+  repo: gregdaynes/after.coffee
+  name: github
+  branch: master
+  squash_merges: true
+
+publish_mode: editorial_workflow
+media_folder: "src/images"
+public_folder: "/images"
+collections:
+- name: "post"
+  label: "Post" # Used in the UI
+  folder: "src/_posts" # The path to the folder where the documents are stored
+  create: true # Allow users to create new documents in this collection
+  slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+  fields: # The fields for each document, usually in front matter
+  - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+  - {label: "Categories", multiple: true, name: "categories", widget: "select", options: ["snippet small medium large"] }
+  - {label: "Tags", name: "tags", widget: "list" }
+  - {label: "Title", name: "title", widget: "string"}
+  - {label: "Publish Date", name: "date", widget: "datetime"}
+  - {label: "Body", name: "body", widget: "markdown"}
+  - {label: "Featured Image", name: "thumbnail", widget: "image"}

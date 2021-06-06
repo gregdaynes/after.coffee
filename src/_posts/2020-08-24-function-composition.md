@@ -1,5 +1,5 @@
 ---
-category: 1oz
+category: small
 summary: Use function composition to construct functions greater than the sum of  their parts.
 tags:
   - fp
@@ -11,21 +11,21 @@ This is a quick look at applying one of the core concepts in functional programm
 Starting with a simple function that takes a number as value and adds 2.
 
 ```js
-const addTwo = (value) => value + 2
+const addTwo = (value) => value + 2;
 ```
 
 Another function that multiplies a value by 3.
 
 ```js
-const timesThree = (value) => value * 3
+const timesThree = (value) => value * 3;
 ```
 
 Putting the functions to use, we can write something like
 
 ```js
-const x = 1
-const y = addTwo(x)
-const z = timesThree(y)
+const x = 1;
+const y = addTwo(x);
+const z = timesThree(y);
 ```
 
 When run, it yields 9.
@@ -33,7 +33,7 @@ When run, it yields 9.
 Another way to write this without the intermediate variables
 
 ```js
-const x = timesThree(addTwo(1))
+const x = timesThree(addTwo(1));
 ```
 
 Again yields 9, but is slightly awkward to read at a glance.
@@ -47,25 +47,32 @@ We can use composition to help us make it easier to read (this is also called Cu
 ```js
 function compose(...fns) {
   return function compose(input) {
-    return fns.reduce((v, fn) => v.then(fn), Promise.resolve(input))
-  }
+    return fns.reduce((v, fn) => v.then(fn), Promise.resolve(input));
+  };
 }
 ```
 
 This compose function, takes a list of functions as arguments, and returns a new instance of the function that takes an argument which the original list of functions are applied in order.
 
-__bonus, this handles promises returned from functions__
+**bonus, this handles promises returned from functions**
 
 This is a slightly different approach from some userland libraries that offer composition/currying. They are usually read right to left because of how we pass in the first argument.
 
 ```js
-compose(addTwo, timesThree)(1)
+compose(addTwo, timesThree)(1);
 ```
 
 This looks pretty good. A quick glance gets the majority of how it works, but the `1` seems out of place. With only a handful of operations it's not a problem. It starts to break down when you have many operations that are being done.
 
 ```js
-const life = compose(drinkCoffee, eatBiscuit, playVideogame, sleep, drinkCoffee, gotoWork)('greg')
+const life = compose(
+  drinkCoffee,
+  eatBiscuit,
+  playVideogame,
+  sleep,
+  drinkCoffee,
+  gotoWork
+)("greg");
 ```
 
 Reading the variable, then understanding that a composition is about to occurr, jump to the end, figure out what the argument is, jump back to the compose and read what is about to happen. Again, this is where having it read right to left might be preferable.
@@ -74,14 +81,22 @@ A very simple and quick fix for this is to define the initial value as the first
 
 ```js
 function pipe(x, ...fns) {
-  return compose(...fns)(x)
+  return compose(...fns)(x);
 }
 ```
 
 Now we can move the initial value to the start of the list of arguments.
 
 ```js
-const life = compose('greg', drinkCoffee, eatBiscuit, playVideogame, sleep, drinkCoffee, gotoWork)
+const life = compose(
+  "greg",
+  drinkCoffee,
+  eatBiscuit,
+  playVideogame,
+  sleep,
+  drinkCoffee,
+  gotoWork
+);
 ```
 
 That's it. A brief look at function composition.
@@ -91,14 +106,10 @@ There's still the issue of having each function take a single argument. The quic
 Another solution, which I tend to reach for is to embrace the single argument functions, but make each function in the list, also return a function. That was worded horribly, here's an example.
 
 ```js
-const add = (i) => (value) => value + i
-const multiply = (i) => (value) => value * i
+const add = (i) => (value) => value + i;
+const multiply = (i) => (value) => value * i;
 
-pipe(
-  1,
-  add(2),
-  multiply(3)
-)
+pipe(1, add(2), multiply(3));
 ```
 
 This yields 9 again, and gives the functions more flexibility/configurability without too much extra work.
@@ -129,17 +140,17 @@ If you're a fan of promise syntax (like I am), this is starting to look a lot li
 Here's the same function above, but using promises `then` syntax which I find makes it even more legible.
 
 ```js
-async function createArticle (article) {
-  debug('createArticle', article)
+async function createArticle(article) {
+  debug("createArticle", article);
 
-  const connection = connect()
+  const connection = connect();
 
   return connection
     .then(useDatabase(databaseName))
     .then(useCollection(collectionName))
     .then(insertOne(article))
     .then(handleCreateResult())
-    .finally(close(connection))
+    .finally(close(connection));
 }
 ```
 
@@ -151,6 +162,7 @@ Some guidlines to leave you with:
 - Function should do 1 thing, break multiple things into multiple functions
 - Composable functions lend themselves to unit tests
 
-__Some libraries that offer Composition__
+**Some libraries that offer Composition**
+
 - [Ramda](https://ramdajs.com/)
 - [Lodash](https://lodash.com/)

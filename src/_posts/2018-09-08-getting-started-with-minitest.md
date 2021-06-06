@@ -1,6 +1,6 @@
 ---
 summary: Minitest is a comprehensive testing library that ships with Ruby. Take a deep look into what Minitest is, how to use it, some of it's features and how it compares to RSpec.
-categories: 12oz
+categories: medium
 tags:
   - ruby
   - testing
@@ -10,8 +10,7 @@ tags:
 
 {% include toc.html %}
 
-What is Minitest?
--------------------
+## What is Minitest?
 
 Minitest is a complete, lightweight suite of testing utilities for Ruby.
 
@@ -25,9 +24,7 @@ Here is a quick example of a test in Minitest
 {% include_relative _getting-started-with-minitest/simple-example.rb %}
 {% endhighlight %}
 
-
-How to start testing with Minitest
-----------------------------------
+## How to start testing with Minitest
 
 Getting started with Minitest is amazingly easy. If you can write Ruby (even if you've only written a few methods) you can write Minitest.
 
@@ -35,13 +32,15 @@ Getting started with Minitest is amazingly easy. If you can write Ruby (even if 
 
 To get started, create a file called `coffee_test.rb`
 
-_It is recommended to follow the Minitest convention by ending the file name with _test.rb. This is not a hard requirement, but will make for a good habit when adding tests for Rails or other projects that have tooling around `_test`._
+_It is recommended to follow the Minitest convention by ending the file name with \_test.rb. This is not a hard requirement, but will make for a good habit when adding tests for Rails or other projects that have tooling around `_test`._
 
 Next, add `minitest/autorun` as a requirement
 Then create a new class `CoffeeTest` as a subclass of `Minitest::Test`
 
 {% highlight ruby %}
+
 # coffee_test.rb
+
 {% include_relative _getting-started-with-minitest/01a/coffee_test.rb %}
 {% endhighlight %}
 
@@ -58,13 +57,15 @@ _getting-started-with-minitest tests are just plain old Ruby methods._
 Start by adding a new method starting with `test_` to the class.
 
 {% highlight ruby %}
+
 # coffee_test.rb
+
 {% include_relative _getting-started-with-minitest/01b/coffee_test.rb %}
 {% endhighlight %}
 
 The `test_` prefix for the method is how Minitest distinguishes Ruby test methods and other methods in the test file, (like helper methods that handle setup, or create data for use across multiple tests).
 
-_`test_` is one way to write tests in Minitest. Another way is to use a Spec DSL, which is explained later in this post._
+_`test_` is one way to write tests in Minitest. Another way is to use a Spec DSL, which is explained later in this post.\_
 
 ### Write an assertion
 
@@ -75,7 +76,9 @@ To test the opposite, blocks or calls returning false, use `refute`. The default
 Now write an assertion, in this case, we're going to test that a new instance of `Coffee` is still a `Coffee`.
 
 {% highlight ruby %}
+
 # coffee_test.rb
+
 {% include_relative _getting-started-with-minitest/01c/coffee_test.rb %}
 {% endhighlight %}
 
@@ -114,10 +117,13 @@ The test ran quickly, but failed. Look over the error. It indicates that `Coffee
 Add the `Coffee` class.
 
 {% highlight ruby %}
+
 # coffee.rb
+
 {% include_relative _getting-started-with-minitest/01d/coffee.rb %}
 
 # coffee.rb
+
 {% include_relative _getting-started-with-minitest/01d/coffee_test.rb %}
 {% endhighlight %}
 
@@ -140,10 +146,13 @@ Add a test that will check an instance of Coffee, will return a list of flavours
 The assertion to use here will be `assert_includes`. Which takes a `collection` and an `obj`, validating that the obj is in the collection.
 
 {% highlight ruby %}
+
 # coffee.rb
+
 {% include_relative _getting-started-with-minitest/01e/coffee.rb %}
 
 # coffee_test.rb
+
 {% include_relative _getting-started-with-minitest/01e/coffee_test.rb %}
 {% endhighlight %}
 
@@ -155,9 +164,9 @@ Minitest comes with a Spec DSL. Which, instead of writing methods, they're writt
 
 Continuing with our previous coffee example, we'll do the following:
 
-+ Update each test `test_description` to use `describe`
-+ update each test to use `it`statements
-+ Make use of `let` statements
+- Update each test `test_description` to use `describe`
+- update each test to use `it`statements
+- Make use of `let` statements
 
 ### Update test descriptions
 
@@ -168,10 +177,13 @@ _Make sure your test follows the class you're resting. This wasn't a requirement
 Next, we'll replace our class `CoffeeTest` with a describe block.
 
 {% highlight ruby %}
+
 # coffee.rb
+
 {% include_relative _getting-started-with-minitest/02a/coffee_abbr.rb %}
 
 # coffee_test.rb
+
 {% include_relative _getting-started-with-minitest/02a/coffee_test_abbr.rb %}
 {% endhighlight %}
 
@@ -198,10 +210,13 @@ We're now ready to continue upgrading our tests to specs.
 Next, we'll replace `test_` methods with `it` statements. This will make our tests read more like plain language, and less like a Ruby method.
 
 {% highlight ruby %}
+
 # coffee.rb
+
 {% include_relative _getting-started-with-minitest/02b/coffee_abbr.rb %}
 
 # coffee_test.rb
+
 {% include_relative _getting-started-with-minitest/02b/coffee_test_abbr.rb %}
 {% endhighlight %}
 
@@ -216,10 +231,13 @@ _Under the hood, an `it` statement gets converted into a `test_the_thing` method
 _For our existing tests, we don't have anything that needs it. We're going to make our possible flavours more complicated than just a string so we can try using `let`_
 
 {% highlight ruby %}
+
 # coffee.rb
+
 {% include_relative _getting-started-with-minitest/02c/coffee.rb %}
 
 # coffee_test.rb
+
 {% include_relative _getting-started-with-minitest/02c/coffee_test.rb %}
 {% endhighlight %}
 
@@ -234,10 +252,13 @@ Another common pattern is to put shared `let` statements at the top or at least 
 Subject is a lazy man's generator. It will return the block you specify as `subject`.
 
 {% highlight ruby %}
+
 # coffee.rb
+
 {% include_relative _getting-started-with-minitest/02d/coffee.rb %}
 
 # coffee_test.rb
+
 {% include_relative _getting-started-with-minitest/02d/coffee_test.rb %}
 {% endhighlight %}
 
@@ -257,7 +278,9 @@ Add Rake to your `Gemfile`
 Add the following to `rakefile.rb`.
 
 {% highlight ruby %}
+
 # rakefile.rb
+
 {% include_relative _getting-started-with-minitest/rakefile.rb %}
 {% endhighlight %}
 
@@ -305,7 +328,7 @@ Minitest assertions always check for a postive result. If you want to test for n
 {% include_relative _getting-started-with-minitest/assertions/assert_includes_test.rb %}
 {% endhighlight %}
 
-`assert_match(matcher, obj,  message = nil)` fails unless `matcher` =~ `obj`
+`assert_match(matcher, obj, message = nil)` fails unless `matcher` =~ `obj`
 
 {% highlight ruby %}
 {% include_relative _getting-started-with-minitest/assertions/assert_match_test.rb %}
@@ -328,7 +351,6 @@ Minitest comes with a wide range of assertions for testing. You can see all of t
 ### Using Seeds to replay tests
 
 If you've watched the output as you've run throug Minispec, you'll probably have noticed the following
-
 
 {% highlight bash %}
 Run options: --seed 59802
@@ -417,14 +439,18 @@ Rails by default uses Minitest to run your tests. In fact, Rails itself is teste
 The default Rails `test_helper.rb` is configured to run `test` style tests, it looks like the following.
 
 {% highlight ruby %}
+
 # test_helper.rb
+
 {% include_relative _getting-started-with-minitest/rails_test_helper_default.rb %}
 {% endhighlight %}
 
 We can add support for Minitest::Spec DSL pretty easily.
 
 {% highlight ruby %}
+
 # test_helper.rb
+
 {% include_relative _getting-started-with-minitest/rails_test_helper_spec.rb %}
 {% endhighlight %}
 
@@ -436,5 +462,5 @@ This post only covers a small portion of what Minitest can do. That is not inclu
 
 The following links should help you on your way to mastering Minitest.
 
-+ [SeattleRB - Minitest](https://github.com/seattlerb/minitest)
-+ [Ruby Docs - Minitest](http://ruby-doc.org/stdlib-2.0.0/libdoc/minitest/rdoc/MiniTest.html)
+- [SeattleRB - Minitest](https://github.com/seattlerb/minitest)
+- [Ruby Docs - Minitest](http://ruby-doc.org/stdlib-2.0.0/libdoc/minitest/rdoc/MiniTest.html)
