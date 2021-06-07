@@ -14,13 +14,14 @@ layout: compress
   <body class="{{ page.layout }}">
     <header data-component="site-header">
       <div class="wrapper">
-        <a href="/">
+        <div>
           <i class="logo">{% include mug.svg %}</i>
           <i class="logo-mobile">{% include togo.svg %}</i>
-        </a>
+        </div>
 
         <div>
           <h1><a href="/">{{ site.name }}</a></h1>
+
           <span>{% include tagline.html %}</span>
         </div>
       </div>

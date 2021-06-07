@@ -72,7 +72,8 @@ strong {
 
 a {
   color: var(--c-blue);
-  text-underline-offset: 0.21em;
+  text-underline-offset: 0.20em;
+  text-decoration-thickness: 1px;
   text-decoration-color: var(--c-blue);
 
   &:focus {

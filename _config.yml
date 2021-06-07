@@ -4,9 +4,9 @@ email: contact@after.coffee
 tagline: >-
   Code to go with your coffee.
 description: >-
-  Essays to snippets related to software development.
+  Essays to snippets, writings related to software development.
 baseurl: ""
-url: "after.coffee"
+url: "https://after.coffee"
 language: "en"
 kramdown:
   parse_block_html: true
