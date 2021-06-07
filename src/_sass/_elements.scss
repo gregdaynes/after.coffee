@@ -24,17 +24,14 @@ body {
 }
 
 main {
-  padding: var(--gap-4x) 0;
-  width: calc(100% - var(--gap-2x));
-  max-width: 70ch;
-  margin: 0 auto;
   flex: 1 0 auto;
 }
 
-footer {
-  width: 100%;
+main, footer, header {
+  width: calc(100% - var(--gap-2x));
   max-width: 70ch;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h1 {

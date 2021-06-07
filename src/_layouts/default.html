@@ -12,8 +12,9 @@ layout: compress
   </head>
 
   <body class="{{ page.layout }}">
+    {% include global-header.html %}
+
     <main id="top">
-      {% include global-header.html %}
       {{ content }}
     </main>
 
