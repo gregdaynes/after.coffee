@@ -146,7 +146,7 @@
     padding: var(--gap-4x) 0;
     display: grid;
     grid-gap: var(--gap);
-    grid-template-columns: clamp(10px, 50px, 80px) 1fr;
+    grid-template-columns: 80px 1fr;
 
     @media screen and (min-width: 72em) {
       padding: calc(var(--gap) * 8) 0;

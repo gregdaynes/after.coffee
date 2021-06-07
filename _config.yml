@@ -2,8 +2,9 @@ name: After Coffee
 owner: Gregory Daynes
 email: contact@after.coffee
 tagline: >-
-  Code paired with coffee.
-description: ""
+  Code to go with your coffee.
+description: >-
+  Essays to snippets related to software development.
 baseurl: ""
 url: "after.coffee"
 language: "en"

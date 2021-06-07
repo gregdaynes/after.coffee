@@ -1,0 +1,28 @@
+{% assign aromas = "floral fragrant citrus berry-like alliceous leguminous nut-like malt-like candy-like syrup-like chocolate-like vanilla-like turpeny medicinal warming pungent smoky ashy" %}
+{% assign tastes = "acrid hard tart tangy  piquant nippy mild delicate soft neutral rough astringent alkaline caustic phenolic creosol" %}
+
+{% assign min = 0 %}
+{% assign max = 16 %}
+{% assign diff = max | minus: min %}
+
+{% assign rand1 = "now" | date: "%N" | modulo: diff | plus: min %}
+{% assign rand2 = "now" | date: "%N" | modulo: diff | plus: min %}
+{% assign rand3 = "now" | date: "%N" | modulo: diff | plus: min %}
+
+{% assign a = aromas | split: " " %}
+{% assign t = tastes | split: " " %}
+{% assign a1 = a[rand1] %}
+{% assign t1 = t[rand1] %}
+{{ a1 | capitalize }} {{ t1 | capitalize }}
+
+{% assign a = aromas | remove: a1 | split: " " %}
+{% assign t = tastes | remove: t1 | split: " " %}
+{% assign a2 = a[rand2] %}
+{% assign t2 = t[rand2] %}
+{{ a2 | capitalize }} {{ t2 | capitalize }}
+
+{% assign a = aromas | remove: a1 | remove: a2 | split: " " %}
+{% assign t = tastes | remove: t1 | remove: t2 | split: " " %}
+{% assign a3 = a[rand3] %}
+{% assign t3 = t[rand3] %}
+{{ a3 | capitalize }} {{ t3 | capitalize  }}
