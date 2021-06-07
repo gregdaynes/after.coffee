@@ -1,0 +1,9 @@
+<div data-component="content-list">
+  {% for data in include.data %}
+  <article data-component="content-summary">
+    {% include content-header.html data=post %}
+
+    <a data-component="read-more" href="{{ data.url }}">Read Article</a>
+  </article>
+  {% endfor %}
+</div>

@@ -1,12 +1,19 @@
 html {
-  @include reset-html;
-  @include reset-border-box;
-
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
   font-family: serif;
   font-size: 16px;
-
   overflow-y: scroll;
-  @include smooth-scroll;
+  scroll-behavior: smooth;
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+
+  *:before, *:after {
+    box-sizing: inherit;
+  }
 }
 
 html, body {
@@ -14,7 +21,8 @@ html, body {
 }
 
 body {
-  @include reset-body;
+  min-height: 100vh;
+  margin: 0;
 
   display: flex;
   flex-direction: column;
@@ -27,7 +35,7 @@ main {
   flex: 1 0 auto;
 }
 
-main, footer, header {
+main, footer, body > header {
   width: calc(100% - var(--gap-2x));
   max-width: 70ch;
   margin-left: auto;
@@ -35,7 +43,9 @@ main, footer, header {
 }
 
 h1 {
-  @include reset-h1;
+  // Correct the margin on `h1` elements within `section` and
+  // `article` contexts in Chrome, Firefox, and Safari.
+  margin: 0.67em 0;
 }
 
 :is(h1, h2, h3) {
@@ -52,12 +62,12 @@ h1 {
 
 small, .small {
   @media screen and (min-width: 40em) {
-    @include reset-small;
+    font-size: 80%;
   }
 }
 
 strong {
-  @include reset-strong;
+  font-weight: bolder;
 }
 
 a {
@@ -72,7 +82,7 @@ a {
 }
 
 code {
-  @include reset-code;
+  font-family: monospace;
   font-size: 1.75ex;
   background-color: var(--c-gray-l6);
 
@@ -97,17 +107,18 @@ code {
 }
 
 details {
-  @include reset-details;
+  display: block;
 }
 
 summary {
-  @include reset-summary;
+  display: list-item;
 }
 
 pre {
-  @include reset-pre;
+  font-family: monospace, monospace;
+  font-size: 1em;
 }
 
 ul {
-  padding: 0 0 0 var(--gap);
+  padding-left: var(--gap);
 }

@@ -1,0 +1,11 @@
+{% assign data = include.data %}
+
+<header data-component="content-header">
+  <h1>{{ data.title }}</h1>
+
+  {% include content-meta.html data=data %}
+
+  {% if data.summary %}
+  <section><p>{{ data.summary }}</p></section>
+  {% endif %}
+</header>

@@ -1,0 +1,13 @@
+{% assign data = include.data %}
+
+<ul data-component="content-meta">
+  <li data-component="date">
+    {{ data.date | date: "%Y-%m-%d" }}
+  </li>
+  <li data-component="author">
+    {{ data.author }}
+  </li>
+  <li data-component="tags">
+    {{ data.tags | join: " " }}
+  </li>
+</ul>
