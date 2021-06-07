@@ -1,8 +1,4 @@
 [data-component=global-footer] {
-  font-family: sans-serif;
-  padding: 0 $gap $gap-half;
-  display: flex;
-  flex-direction: column;
 
   @media screen and (min-width: 48em) {
     flex-direction: row;
@@ -27,7 +23,7 @@
 
   nav {
     @media screen and (min-width: 48em) {
-      padding: 0 $gap;
+      padding: 0 var(--gap);
     }
   }
 }

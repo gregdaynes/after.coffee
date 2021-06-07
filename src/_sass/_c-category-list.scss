@@ -1,19 +1,15 @@
-[data-component=category-list] {
-  padding: 0 $gap;
-}
-
 [data-component=category] {
-  margin-bottom: $gap-2x;
+  margin-bottom: var(--gap);
 
   > h1 {
     font-family: sans-serif;
-    margin: 0 0 $gap-half;
+    margin: 0 0 var(--gap-half);
     line-height: 1;
     font-size: 1.75em;
   }
 
   > p {
-    margin-top: $gap-half;
+    margin-top: var(--gap-half);
     color: var(--c-gray-d4);
     font-family: sans-serif;
   }
@@ -25,16 +21,16 @@
 }
 
 [data-component="article-summary"] {
-  margin-bottom: $gap;
+  margin-bottom: var(--gap-2x);
 
   h1 {
     font-family: sans-serif;
     margin-top: 0;
-    margin-bottom: $gap-half;
+    margin-bottom: var(--gap-half);
   }
 
   p {
-    margin: $gap-half 0;
+    margin: var(--gap-half) 0;
   }
 }
 

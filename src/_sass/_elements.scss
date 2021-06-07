@@ -9,28 +9,32 @@ html {
   @include smooth-scroll;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   @include reset-body;
 
   display: flex;
-  padding: 5vh clamp(1rem, 5vw, 3rem) 1rem;
-  line-height: 1.5;
+  flex-direction: column;
   font-family: system-ui, sans-serif;
   background-color: var(--c-gray-l7);
-  color: var(--c-gray-d6);
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+  color: var(--c-gray-d5);
 }
 
 main {
-  --layout-spacing: max(8vh, 3rem);
+  padding: var(--gap-4x) 0;
+  width: calc(100% - var(--gap-2x));
+  max-width: 70ch;
+  margin: 0 auto;
+  flex: 1 0 auto;
+}
 
-  flex: 1;
+footer {
   width: 100%;
   max-width: 70ch;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 h1 {
@@ -46,7 +50,7 @@ h1 {
 }
 
 :is(h2, h3):not(:first-child) {
-  margin-top: 2em;
+  margin-top: var(--gap);
 }
 
 small, .small {
@@ -61,7 +65,8 @@ strong {
 
 a {
   color: var(--c-blue);
-  text-underline-offset: 0.08em;
+  text-underline-offset: 0.21em;
+  text-decoration-color: var(--c-blue);
 
   &:focus {
     outline: 1px solid currentColor;
@@ -83,7 +88,7 @@ code {
     &::after {
       content: '';
       display: inline;
-      margin: $gap-quarter;
+      margin: var(--gap-quarter);
     }
   }
 
@@ -107,5 +112,5 @@ pre {
 }
 
 ul {
-  padding: 0 0 0 $gap;
+  padding: 0 0 0 var(--gap);
 }

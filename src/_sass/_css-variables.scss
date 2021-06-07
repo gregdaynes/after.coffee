@@ -1,4 +1,10 @@
 :root {
+  --gap: 1rem;
+  --gap-quarter: calc(var(--gap) / 4);
+  --gap-half: calc(var(--gap) / 2);
+  --gap-2x: calc(var(--gap) * 2);
+  --gap-4x: calc(var(--gap) * 4);
+
   --c-blue:   hsl(211, 100%, 50%);
   --c-green:  hsl(135,  59%, 49%);
   --c-indigo: hsl(241,  61%, 59%);

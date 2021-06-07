@@ -3,12 +3,18 @@
   background-color: var(--c-gray-l6);
   margin: 0;
   color: var(--c-gray-d6);
-  padding: $gap-quarter $gap;
-  overflow-x: auto;
+  padding: var(--gap-quarter) var(--gap);
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 
   @media (preferes-color-scheme: dark) {
     background-color: var(--c-gray-l6);
     color: var(--c-gray-d7);
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 
   .c1 {
@@ -20,10 +26,3 @@
   }
 }
 
-blockquote {
-  margin: 2rem 0;
-  padding: 0.5em 1rem;
-  border-left: 3px solid rgba(0, 0, 0, 0.35);
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 0 0.25rem 0.25rem 0;
-}
