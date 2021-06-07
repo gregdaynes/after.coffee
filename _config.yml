@@ -1,4 +1,4 @@
-title: After Coffee
+name: After Coffee
 owner: Gregory Daynes
 email: contact@after.coffee
 tagline: >-
@@ -16,7 +16,10 @@ source: ./src
 timezone: America/Pacific
 encoding: utf-8
 livereload: true
-autor: Gregory Daynes
+author:
+  name: Gregory Daynes
+  url: https://github.com/gregdaynes
+  avatar: https://s.gravatar.com/avatar/64219f714a97767504935784ea1b7236?s=80
 twitter:
   card: summary
   username: gregdaynes

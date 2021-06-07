@@ -12,12 +12,50 @@ layout: compress
   </head>
 
   <body class="{{ page.layout }}">
-    {% include global-header.html %}
+    <header data-component="site-header">
+      <div class="wrapper">
+        <a href="/">
+          <i class="logo">{% include mug.svg %}</i>
+          <i class="logo-mobile">{% include togo.svg %}</i>
+        </a>
+
+        <div>
+          <h1><a href="/">{{ site.name }}</a></h1>
+          <span>{{ site.tagline }}</span>
+        </div>
+      </div>
+    </header>
 
     <main id="top">
-      {{ content }}
+      <div class="wrapper">
+        {{ content }}
+      </div>
     </main>
 
-    {% include global-footer.html %}
+    <footer data-component="site-footer">
+      <div class="wrapper"
+        <nav data-component="social-links">
+          <h1 data-hidden>Social Links</h1>
+
+          {% for link in site.social.links %}
+            <a href="{{ link }}">{{ link | remove: "https://" | split: "." | slice: 0 | join: "" | capitalize }}</a>
+          {% endfor %}
+          <a href="mailto:gregdaynes@gmail.com">Mail</a>
+          <a href="/feeds">Subscribe</a>
+        </nav>
+
+        <div data-component="legal">
+          <h1 data-hidden>Legal</h1>
+
+          <div>&copy; {{ site.time | date: "%Y" }} {{ site.owner }}</div>
+
+          <nav>
+            <a class="small" href="https://github.com/gregdaynes/after.coffee/issues/new?permalink=https://github.com/gregdaynes/after.coffee/blob/3b91d4da91ae447c4c58ca8ab3428647869d42c0/{{ page.path }}">Report Issue</a>
+
+            <a class="small" href="https://www.iubenda.com/privacy-policy/95138593">Privacy Policy</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

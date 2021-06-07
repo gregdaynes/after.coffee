@@ -1,13 +1,13 @@
 {%- if page.title -%}
   {{- page.title -}}
 
-  {%- if site.title -%}
-    {%- if site.title-delimiter -%}
-      {{- site.title-delimiter -}}
+  {%- if site.name -%}
+    {%- if site.name-delimiter -%}
+      {{- site.name-delimiter -}}
     {%- endif -%}
 
-    {{- site.title -}}
+    {{- site.name -}}
   {%- endif -%}
-{%- else if site.title -%}
-  {{- site.title -}}
+{%- else if site.name -%}
+  {{- site.name -}}
 {%- endif -%}
