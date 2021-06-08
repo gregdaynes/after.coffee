@@ -1,7 +1,5 @@
-merium:
-  title: Drip Coffee
-  description: Essays, deep-dives, and tutorials written to be read with a large cup of coffee
-
-small:
-  title: Espresso
-  description: Quick notes, paired perfectly with an espresso.
+items:
+  - name: medium
+    description: Essays, deep-dives, and tutorials written to be read with a large cup of coffee
+  - name: small
+    description: Quick notes, paired perfectly with an espresso.

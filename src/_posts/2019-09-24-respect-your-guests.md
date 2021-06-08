@@ -1,7 +1,9 @@
 ---
+layout: post
 title: Respect your guests
 category: small
 summary: The web has changed over the last decade, respect your guests and build with them in mind.
+author: gregdaynes
 tags:
   - html
   - css

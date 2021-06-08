@@ -21,11 +21,55 @@ collections:
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
+      - {
+          label: 'Author',
+          name: 'author',
+          widget: 'relation',
+          collection: 'authors',
+          display_fields: [display_name],
+          search_fields: [display_name],
+          value_field: 'name',
+        }
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "reviews"
+    label: "Reviews" # Used in the UI
+    folder: "src/_reviews" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}.md" # Filename template, e.g., YYYY-MM-DD-title.md
+    editor:
+      preview: false
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Categories", multiple: true, name: "categories", widget: "select", options: ["snippet", "small", "medium", "large"] }
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
+      - {
+          label: 'Author',
+          name: 'author',
+          widget: 'relation',
+          collection: 'authors',
+          display_fields: [display_name],
+          search_fields: [display_name],
+          value_field: 'name',
+        }
+      - {label: "Body", name: "body", widget: "markdown"}
+      - label: 'Topic'
+        name: 'topic'
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Type", name: "type", widget: "select", options: ["article"], required: false}
+          - { label: "Title", name: "title", widget: "string", required: false}
+          - { label: "Author", name: "author", widget: "string", required: false}
+          - { label: "Twitter", name: "twitter", widget: "string", required: false}
+          - { label: "Link", name: "link", widget: "string", required: false}
+          - { label: "Archive.org", name: "archive", widget: "string", required: false}
 
   - name: 'authors'
     label: 'Authors'
-    folder: '_authors/'
+    folder: 'src/_authors/'
     create: true
     editor:
       preview: false
@@ -43,7 +87,7 @@ collections:
     files:
       - label: 'About Page'
         name: 'about'
-        file: 'about.md'
+        file: 'src/about.md'
         fields:
           - { label: 'Title', name: 'title', widget: 'hidden', default: 'about' }
           - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'about' }
@@ -56,7 +100,7 @@ collections:
     files:
       - label: 'Navigation'
         name: 'navigation'
-        file: '_data/navigation.yml'
+        file: 'src/_data/navigation.yml'
         fields:
           - label: 'Navigation Items'
             name: 'items'
@@ -64,3 +108,13 @@ collections:
             fields:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Link", name: "link", widget: "string" }
+      - label: 'Categories'
+        name: 'categories'
+        file: 'src/_data/categories.yml'
+        fields:
+          - label: 'Categories'
+            name: 'items'
+            widget: 'list'
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }

@@ -212,3 +212,16 @@
     }
   }
 }
+
+[data-component=author] a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+[data-component=content-author] {
+  [data-component=content-list] [data-component=content-summary] {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+}

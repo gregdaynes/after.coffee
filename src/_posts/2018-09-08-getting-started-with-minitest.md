@@ -1,7 +1,9 @@
 ---
+layout: post
 title: Getting Started With Minitest
 summary: Minitest is a comprehensive testing library that ships with Ruby. Take a deep look into what Minitest is, how to use it, some of it's features and how it compares to RSpec.
 categories: medium
+author: gregdaynes
 tags:
   - ruby
   - testing

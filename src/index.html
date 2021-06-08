@@ -3,4 +3,5 @@ layout: default
 canonical_url: https://after.coffee
 ---
 
-{% include content-list.html data=site.posts %}
+{% assign articles = site.posts | concat: site.reviews | sort: "date" | reverse %}
+{% include content-list.html data=articles %}

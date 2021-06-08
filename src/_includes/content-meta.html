@@ -4,9 +4,12 @@
   <li data-component="date">
     {{ data.date | date: "%Y-%m-%d" }}
   </li>
+  {% if data.author %}
   <li data-component="author">
-    {{ data.author }}
+    {% assign author = site.authors | where: "name", data.author | first %}
+    <a href="{{ author.url }}">{{ author.display_name }}</a>
   </li>
+  {% endif %}
   <li data-component="tags">
     {{ data.tags | join: " " }}
   </li>

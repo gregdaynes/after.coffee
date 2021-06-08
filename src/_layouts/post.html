@@ -4,19 +4,18 @@ layout: default
 <article data-component="content-article">
   {% include content-header.html data=page %}
 
-  {% if data.article.link %}
+  {% if data.topic.link %}
   <div data-component="content-reference">
     <p><strong>What I'm referring to</strong></p>
 
     <p>
-      <a href="{{ data.article.link }}">{{ data.article.title }}</a> - <small>(<a href="{{data.article.archive}}">Cached</a>)</small>
-      <br /> by {{ data.article.author }} - <a href="https://twitter.com/{{data.article.twitter}}">@{{data.article.twitter}}</a>
+      <a href="{{ data.topic.link }}">{{ data.topic.title }}</a> - <small>(<a href="{{data.topic.archive}}">Cached</a>)</small>
+      <br /> by {{ data.topic.author }} - <a href="https://twitter.com/{{data.topic.twitter}}">@{{data.topic.twitter}}</a>
     </p>
   </div>
   {% endif %}
 
   {{ content }}
-
 
   <p>
     {{ page.date | date_to_string }} {% assign author = site.authors | where: 'name', page.author |

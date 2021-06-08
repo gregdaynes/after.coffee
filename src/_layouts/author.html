@@ -1,18 +1,19 @@
 ---
 layout: default
 ---
+<article data-component="content-author">
+  <h1>{{ page.display_name }}</h1>
 
-<h1>{{ page.display_name }}</h1>
-<h2>{{ page.position }}</h2>
+  {{ content }}
 
-{{ content }}
+  {% assign articles = site.posts | concat: site.reviews | where: 'author', page.name | sort: "date" | reverse %}
+  <ul data-component="content-list">
+    {% for data in articles %}
 
-<h2>Posts</h2>
-<ul>
-  {% assign filtered_posts = site.posts | where: 'author', page.name %} {% for post in
-  filtered_posts %}
-  <li>
-    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-  </li>
-  {% endfor %}
-</ul>
+    <li data-component="content-summary">
+      <a href="{{ data.url }}">{{ data.title }}</a>
+    </li>
+
+    {% endfor %}
+  </ul>
+</article>

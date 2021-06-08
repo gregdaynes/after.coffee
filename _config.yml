@@ -32,14 +32,13 @@ social:
     - https://keybase.io/gregdaynes
 lang: en_CA
 locale: en_CA
-
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      author: Gregory Daynes
+collections:
+  authors:
+    output: true
+    permalink: /:name/index.html
+  reviews:
+    output: true
+    permalink: /:title/index.html
 
 plugins:
   - jekyll-sitemap
