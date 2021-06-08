@@ -4,4 +4,17 @@ canonical_url: https://after.coffee
 ---
 
 {% assign articles = site.posts | concat: site.reviews | sort: "date" | reverse %}
-{% include content-list.html data=articles %}
+
+<div class="content-list">
+  {% for page in articles %}
+  <article>
+    {% include title.html %}
+
+    {% include tag-list.html %}
+
+    {% include content-summary.html %}
+
+    {% include read-more.html %}
+  </article>
+  {% endfor %}
+</div>

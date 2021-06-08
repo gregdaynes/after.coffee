@@ -1,25 +1,28 @@
 ---
 layout: default
 ---
-<article data-component="content-article">
-  {% include content-header.html data=page %}
+<article class="article">
+  <header>
+    {% include title.html %}
 
-  {% if data.topic.link %}
-  <div data-component="content-reference">
+    {% include content-summary.html %}
+  </header>
+
+  {% if page.topic.link %}
+  <div class="content-reference">
     <p><strong>What I'm referring to</strong></p>
 
     <p>
-      <a href="{{ data.topic.link }}">{{ data.topic.title }}</a> - <small>(<a href="{{data.topic.archive}}">Cached</a>)</small>
-      <br /> by {{ data.topic.author }} - <a href="https://twitter.com/{{data.topic.twitter}}">@{{data.topic.twitter}}</a>
+      <a href="{{ page.topic.link }}">{{ page.topic.title }}</a> - <small>(<a href="{{page.topic.archive}}">Cached</a>)</small>
+      <br /> by {{ page.topic.author }} - <a href="https://twitter.com/{{page.topic.twitter}}">@{{page.topic.twitter}}</a>
     </p>
   </div>
   {% endif %}
 
   {{ content }}
 
-  <p>
-    {{ page.date | date_to_string }} {% assign author = site.authors | where: 'name', page.author |
-    first %} {% if author %} - <a href="{{ author.url }}">{{ author.display_name }}</a>
-    {% endif %}
-  </p>
+  <footer>
+    {% include tag-list.html %}
+    ~ {% include author-name.html %}
+  </footer>
 </article>

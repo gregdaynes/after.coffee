@@ -1,11 +1,9 @@
 html {
-  line-height: 1.6;
-  -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
-  font-family: serif;
-  font-size: 16px;
+  font-family: system-ui, sans-serif;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 
   @media screen and (prefers-reduced-motion: reduce) {
     scroll-behavior: auto;
@@ -16,19 +14,14 @@ html {
   }
 }
 
-html, body {
-  height: 100%;
-}
-
 body {
   min-height: 100vh;
   margin: 0;
+  line-height: 1.5;
 
   display: flex;
   flex-direction: column;
-  font-family: system-ui, sans-serif;
-  background-color: var(--c-gray-l7);
-  color: var(--c-gray-d5);
+  color: var(--c-gray-d6);
 }
 
 main {
@@ -38,14 +31,17 @@ main {
 .wrapper {
   width: calc(100% - var(--gap-2x));
   max-width: 70ch;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 h1 {
   // Correct the margin on `h1` elements within `section` and
-  // `article` contexts in Chrome, Firefox, and Safari.
+  // `rticle` contexts in Chrome, Firefox, and Safari.
   margin: 0.67em 0;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
 }
 
 :is(h1, h2, h3) {
@@ -58,16 +54,6 @@ h1 {
 
 :is(h2, h3):not(:first-child) {
   margin-top: var(--gap);
-}
-
-small, .small {
-  @media screen and (min-width: 40em) {
-    font-size: 80%;
-  }
-}
-
-strong {
-  font-weight: bolder;
 }
 
 a {
@@ -102,8 +88,8 @@ code {
 
   // code blocks highlighted, not inline
   &:not([class*="language"]) {
-    padding-right: 0.15em;
-    padding-left: 0.15em;
+    padding-right: var(--gap-quarter);
+    padding-left: var(--gap-quarter);
   }
 }
 
@@ -116,8 +102,8 @@ summary {
 }
 
 pre {
-  font-family: monospace, monospace;
-  font-size: 1em;
+  font-family: monospace;
+  font-size: 1em; // reset
 }
 
 ul {

@@ -16,7 +16,6 @@ permalink: /:title/index.html
 source: ./src
 timezone: America/Pacific
 encoding: utf-8
-livereload: true
 author:
   name: Gregory Daynes
   url: https://github.com/gregdaynes

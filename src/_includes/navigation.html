@@ -1,6 +1,6 @@
-<nav>
+<nav class="site-navigation">
   {% for item in site.data.navigation.items %}
-    <a href="{{ site.baseurl }}{{ item.link }}" {% if page.url == item.link %}style="color: red;"{% endif %}>
+    <a href="{{ site.baseurl }}{{ item.link }}" {% if page.url == item.link %}data-selected{% endif %}>
       {{ item.name }}
     </a>
   {% endfor %}

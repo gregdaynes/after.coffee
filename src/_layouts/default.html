@@ -12,7 +12,7 @@ layout: compress
   </head>
 
   <body class="{{ page.layout }}">
-    <header data-component="site-header">
+    <header class="site-header">
       <div class="wrapper">
         <div>
           <i class="logo">{% include mug.svg %}</i>
@@ -33,9 +33,9 @@ layout: compress
       </div>
     </main>
 
-    <footer data-component="site-footer">
-      <div class="wrapper"
-        <nav data-component="social-links">
+    <footer class="site-footer">
+      <div class="wrapper">
+        <nav class="social-links">
           {% for link in site.social.links %}
             <a href="{{ link }}">{{ link | remove: "https://" | split: "." | slice: 0 | join: "" | capitalize }}</a>
           {% endfor %}
@@ -43,7 +43,7 @@ layout: compress
           <a href="/feeds">Subscribe</a>
         </nav>
 
-        <div data-component="legal">
+        <div class="legal">
           <h1 data-hidden>Legal</h1>
 
           <div>&copy; {{ site.time | date: "%Y" }} {{ site.owner }}</div>
