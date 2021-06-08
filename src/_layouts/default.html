@@ -36,8 +36,6 @@ layout: compress
     <footer data-component="site-footer">
       <div class="wrapper"
         <nav data-component="social-links">
-          <h1 data-hidden>Social Links</h1>
-
           {% for link in site.social.links %}
             <a href="{{ link }}">{{ link | remove: "https://" | split: "." | slice: 0 | join: "" | capitalize }}</a>
           {% endfor %}
@@ -51,9 +49,8 @@ layout: compress
           <div>&copy; {{ site.time | date: "%Y" }} {{ site.owner }}</div>
 
           <nav>
-            <a class="small" href="https://github.com/gregdaynes/after.coffee/issues/new?permalink=https://github.com/gregdaynes/after.coffee/blob/3b91d4da91ae447c4c58ca8ab3428647869d42c0/{{ page.path }}">Report Issue</a>
-
-            <a class="small" href="https://www.iubenda.com/privacy-policy/95138593">Privacy Policy</a>
+            <a href="https://github.com/gregdaynes/after.coffee/issues/new?permalink=https://github.com/gregdaynes/after.coffee/blob/3b91d4da91ae447c4c58ca8ab3428647869d42c0/{{ page.path }}">Report Issue</a>
+            <a href="https://www.iubenda.com/privacy-policy/95138593">Privacy Policy</a>
           </nav>
         </div>
       </div>

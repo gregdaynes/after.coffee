@@ -208,7 +208,7 @@
 
   nav {
     @media screen and (min-width: 48em) {
-      padding: 0 var(--gap);
+      margin-left: var(--gap);
     }
   }
 }
