@@ -1,4 +1,5 @@
 ---
+title: Function Composition
 category: small
 summary: Use function composition to construct functions greater than the sum of  their parts.
 tags:
