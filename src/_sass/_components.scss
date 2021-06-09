@@ -91,25 +91,13 @@
   }
 }
 
-.social-links {
-  order: 1;
-
-  @media screen and (min-width: 48em) {
-    width: 100%;
-  }
-}
-
 .legal {
-  order: 2;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
 
-  @media screen and (min-width: 48em) {
-    display: flex;
-  }
-
-  nav {
-    @media screen and (min-width: 48em) {
-      margin-left: var(--gap);
-    }
+  @media screen and (min-width: 29em) {
+    flex-direction: row;
   }
 }
 

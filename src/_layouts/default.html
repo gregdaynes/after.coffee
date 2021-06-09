@@ -35,7 +35,7 @@ layout: compress
 
     <footer class="site-footer">
       <div class="wrapper">
-        <nav class="social-links">
+        <nav>
           {% for link in site.social.links %}
             <a href="{{ link }}">{{ link | remove: "https://" | split: "." | slice: 0 | join: "" | capitalize }}</a>
           {% endfor %}
@@ -44,8 +44,6 @@ layout: compress
         </nav>
 
         <div class="legal">
-          <h1 data-hidden>Legal</h1>
-
           <div>&copy; {{ site.time | date: "%Y" }} {{ site.owner }}</div>
 
           <nav>
