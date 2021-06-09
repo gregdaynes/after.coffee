@@ -8,21 +8,12 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
 
-  @media (preferes-color-scheme: dark) {
-    background-color: var(--c-gray-l6);
-    color: var(--c-gray-d7);
-  }
-
   &::-webkit-scrollbar {
     display: none;
   }
 
   .c1 {
-    color: var(--c-gray);
-
-    @media (preferes-color-scheme: dark) {
-      background-color: var(--c-gray-d6);
-    }
+    color: var(--c-gray-d6);
   }
 }
 
