@@ -43,11 +43,13 @@ $ npm start
 $ npm run profile
 ```
 
-Exploration of Entity-Component System pattern used in game development. I wanted to see if the pattern could help with legibility and composability. While not as performant as the original implementation. EC proved to be a happy in-between performance and maintainability. I found it to be like [Function Composition](/function-composition) as well as way more memory efficient (this is where EC proves it’s value).
+An exploration of Entity-Component System pattern used in game development. I wanted to see if the pattern could help with legibility and composability.
 
-The concept is for entites to act as containers of data with a global unique dentifier. The logic is exists outside of the entities in systems. Each system operates on entities which have the components the system knows about. Usually a system performs arithmetic, which makes it fast and efficient.
+While not as performant as the original implementation. EC proved to be a happy in-between performance and maintainability. I found it to be like [Function Composition](/function-composition) as well as way more memory efficient (this is where EC proves it’s value).
 
-This expierment served as a place to experiment with the new [Performance Hooks](https://nodejs.org/dist/latest-v16.x/docs/api/perf_hooks.html#perf_hooks_performance_measurement_apis) API.
+The concept is for entites to act as containers of data with a global unique dentifier. The logic exists outside of the entities in systems. Each system operates on entities which have the components the system knows about. Usually a system performs arithmetic, which makes it fast and efficient.
+
+This served as a place to experiment with the new [Performance Hooks](https://nodejs.org/dist/latest-v16.x/docs/api/perf_hooks.html#perf_hooks_performance_measurement_apis) API.
 
 - Choosing to write this using Classes instead of Prototype, I found it to be more legible. Programmers coming from OOP languages like Ruby makes this easier to understand.
 - For/of loops and if/else blocks are also used instead of collection methods like map/reduce. Ease for programmers of all levels to understand without Javascript collections knowledge. And keep me away from long method chains.
@@ -69,7 +71,7 @@ Repo: [gregdaynes/redis-recovery](https://github.com/gregdaynes/redis-recovery)
 # I don't recommend running this application - Bull queue data + env is required
 ```
 
-This script came out of a need one Saturday where an applications job queue was not working as expected. _I am on details of what had ocurred_. It might been from moving job data over to an Elixir application. I attempted fixing with several Redis admin tools, but the dataset ended up being too large.
+This script came out of a need one Saturday where an applications job queue was not working as expected. _I am fuzzy on details of what had ocurred_. It might been from moving job data over to an Elixir application. I attempted fixing with several Redis admin tools, but the dataset ended up being too large.
 
 - Uses event emitter, which was nice for developing in a pipeline style, while ignoring order.
 - This was my first Node ESM module.
@@ -224,7 +226,7 @@ $ npm run test
 
 A _mostly_ complete example for a monolith, which is also suitable for building "microservices".
 
-- Mocha used as test runner for both the Api and the frontend (frontend excluded from this repository). I would chose to use [tap](https://www.npmjs.com/package/tap) for the Api, and Jest for the Frontend. I dislike Jest for testing Node because of the changes made to the runtime. Theres also issues with slow adoption of newer capabilities (because of the these changes)—eg: ESM
+- Mocha used as test runner for both the Api and the frontend (frontend excluded from this repository). I would personally chose to use [tap](https://www.npmjs.com/package/tap) for the Api, and Jest for the Frontend. I dislike Jest for testing Node because of the changes made to the runtime. There are also issues with slow adoption of newer capabilities (because of the these changes)—eg: ESM
 - Replacing the database with SQLite when testing has been a positive choice for fast development (TDD). Given the choice again I would opt to use an in-memory-tuned instance of the production database for integration testing.
 - No workspaces. I ran into an issue with other developers NPM not working with the _then new_ workspace feature (NPM @ 7). Yarn would have worked for this, as well as PNPM.
 - Hygen for generating code based on `ejs` templates. I would chose [copy-template-dir](https://www.npmjs.com/package/copy-template-dir) or similar.
