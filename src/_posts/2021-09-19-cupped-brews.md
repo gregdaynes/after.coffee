@@ -129,7 +129,7 @@ One of the last projects I used Express on, had logging issues.
 - performance constraints,
 - PII in the output.
 
-Chip Log is a wrapper around PinoJS, and is a recommended replacement for other loggers like Morgan and Winston.
+Chip Log is a wrapper around PinoJS (a recommended replacement for other loggers like Morgan and Winston).
 
 I no longer work to maintain this module. Instead directing attention to Fastify which has existing extensions providing these features. It should still work. The inspector will _probably_ break on Node 15+ and definitely can't operate in ESM mode.
 
