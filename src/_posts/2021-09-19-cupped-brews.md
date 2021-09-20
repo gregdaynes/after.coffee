@@ -113,10 +113,12 @@ Results
       B    B       C   C      B
 ```
 
-Sweep Line proved to be useful in a few areas of the application. Cleaning up logic unique to each implementation which was
+Sweepline proved to be useful in a few areas of the application. Cleaning up logic unique to each implementation which was
 - illegible—nested foreach loops
 - terse—nested ternary
 - untested—untestable code
+
+---
 
 ## Context-Aware Logging
 
