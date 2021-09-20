@@ -228,10 +228,10 @@ $ npm run test
 
 A _mostly_ complete example for a monolith, which is also suitable for building "microservices".
 
-- Mocha used as test runner for both the Api and the frontend (frontend excluded from this repository). I would personally chose to use [tap](https://www.npmjs.com/package/tap) for the Api, and Jest for the Frontend. I dislike Jest for testing Node because of the changes made to the runtime. There are also issues with slow adoption of newer capabilities (because of the these changes)—eg: ESM
+- Mocha used as test runner for both the Api and the frontend (frontend excluded from this repository). I would personally choose to use [tap](https://www.npmjs.com/package/tap) for the Api, and Jest for the Frontend. I dislike Jest for testing Node because of the changes made to the runtime. There are also issues with slow adoption of newer capabilities (because of the these changes)—eg: ESM
 - Replacing the database with SQLite when testing has been a positive choice for fast development (TDD). Given the choice again I would opt to use an in-memory-tuned instance of the production database for integration testing.
 - No workspaces. I ran into an issue with other developers NPM not working with the _then new_ workspace feature (NPM @ 7). Yarn would have worked for this, as well as PNPM.
-- Hygen for generating code based on `ejs` templates. I would chose [copy-template-dir](https://www.npmjs.com/package/copy-template-dir) or similar.
+- Hygen for generating code based on `ejs` templates - [copy-template-dir](https://www.npmjs.com/package/copy-template-dir) or similar.
 - CLI came after most of the application and web interface was complete. Nowadays I would build the CLI in parallel with the application logic. This benefits development by not having to remember REPL commands or building out administration uis.
 
 The repository contains `app-example-requests.paw` and `app-example-requests-postman.json` for interacting with the api through Paw or Postman.
