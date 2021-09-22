@@ -10,7 +10,7 @@ tags:
   - Experiments
 ---
 
-I am realizing how disorganized my Github repository list is. Until I work through each repository and determine the state, this list will serve as things I would like to direct your attention to.
+I realize how disorganized my Github repository list has become. Until I tidy it, this list will serve as _things I have worked on recently_.
 
 {% include toc.html %}
 
